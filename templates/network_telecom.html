@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+
+{% block title %}Redes y Telecomunicaciones - INGETsoport{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='redes.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="network-section">
+    <div class="network-container">
+        <h1>Redes y Telecomunicaciones</h1>
+        <p>En <strong>INGETsoport</strong>, ofrecemos soluciones integrales en redes y telecomunicaciones, adaptadas a las necesidades de cada empresa. Nos especializamos en la seguridad, la eficiencia y la optimización de infraestructuras de red para asegurar el mejor rendimiento y confiabilidad en entornos corporativos.</p>
+
+        <div class="services-section">
+            <h2>Servicios de Redes</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <i class="fas fa-project-diagram service-icon"></i>
+                    <h3>Diseño e Implementación de Redes LAN/WAN</h3>
+                    <p>Nos encargamos de la planificación, diseño y configuración de redes LAN/WAN para crear entornos de trabajo interconectados, garantizando una conectividad estable y rápida en toda la empresa.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-shield-alt service-icon"></i>
+                    <h3>Configuración de Firewalls</h3>
+                    <p>Protegemos la red de ciberataques y accesos no autorizados con configuraciones avanzadas de firewalls como Fortigate, Cisco, y Palo Alto, que ofrecen control de tráfico y monitorización en tiempo real.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-wifi service-icon"></i>
+                    <h3>Instalación de Access Points</h3>
+                    <p>Instalamos y configuramos access points de alta calidad para proporcionar una cobertura Wi-Fi segura y de alta velocidad en áreas de trabajo extensas o de difícil acceso.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-eye service-icon"></i>
+                    <h3>Monitoreo y Gestión de Red</h3>
+                    <p>Implementamos monitoreo en tiempo real con herramientas avanzadas como <strong>ManageEngine</strong>, <strong>Zabbix</strong>, y <strong>SolarWinds</strong>, asegurando una detección rápida de problemas y optimización continua.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-lock service-icon"></i>
+                    <h3>Seguridad de Redes</h3>
+                    <p>Implementamos soluciones de seguridad para redes corporativas, como segmentación de red y control de acceso, para proteger datos sensibles contra ciberataques.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-cloud service-icon"></i>
+                    <h3>Redes en la Nube</h3>
+                    <p>Integración de soluciones en la nube para flexibilidad y escalabilidad, incluyendo monitoreo y seguridad en plataformas como AWS, Azure y Google Cloud.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-network-wired service-icon"></i>
+                    <h3>Implementación de Redes SD-WAN</h3>
+                    <p>Optimización de la conectividad y rendimiento de la red mediante soluciones SD-WAN, que permiten la gestión centralizada y la reducción de costos operativos.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-tools service-icon"></i>
+                    <h3>Consultoría en Infraestructura de Red</h3>
+                    <p>Ofrecemos asesoramiento experto en la evaluación y mejora de la infraestructura existente para maximizar el rendimiento y la eficiencia.</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-user-shield service-icon"></i>
+                    <h3>Ciberseguridad y Protección de Datos</h3>
+                    <p>Implementamos políticas de ciberseguridad robustas y soluciones de protección de datos para prevenir brechas y ataques a la información crítica de tu empresa.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="support-section">
+            <h2>Soporte Técnico y Monitoreo</h2>
+            <div class="support-list">
+                <div class="support-item">
+                    <i class="fas fa-headset support-icon"></i>
+                    <h3>Soporte Remoto y On-Site</h3>
+                    <p>Brindamos asistencia técnica de forma remota o en el sitio, asegurando soluciones rápidas y efectivas para resolver incidencias tecnológicas en tiempo real.</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-chart-line support-icon"></i>
+                    <h3>Monitoreo de Red en Tiempo Real</h3>
+                    <p>Supervisión activa y alertas en tiempo real mediante sistemas avanzados como <strong>ManageEngine</strong> y <strong>NetFlow Analyzer</strong>, que permiten detectar anomalías antes de que afecten las operaciones.</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-shield-virus support-icon"></i>
+                    <h3>Consultoría en Seguridad</h3>
+                    <p>Analizamos y evaluamos la infraestructura actual para ofrecer recomendaciones personalizadas y mejoras de seguridad que refuercen la protección de tus datos y recursos.</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-sync-alt support-icon"></i>
+                    <h3>Soluciones de Backup y Recuperación</h3>
+                    <p>Implementación de sistemas de respaldo automatizado y recuperación de datos para evitar pérdida de información crítica ante fallos o ataques.</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-server support-icon"></i>
+                    <h3>Mantenimiento Preventivo</h3>
+                    <p>Mantenimiento y actualización continua de equipos y software para asegurar un rendimiento óptimo y reducir tiempos de inactividad.</p>
+                </div>
+                <div class="support-item">
+                    <i class="fas fa-people-carry support-icon"></i>
+                    <h3>Capacitación y Formación</h3>
+                    <p>Ofrecemos capacitación a tu personal en el uso de herramientas y tecnologías de red, asegurando una correcta gestión y optimización de los recursos disponibles.</p>
+                </div>
+            </div>
+        </div>
+
+        <h2>Tendencias y Tecnologías Emergentes</h2>
+        <p>Nos mantenemos a la vanguardia de las últimas tendencias en redes y telecomunicaciones, incluyendo:</p>
+        <ul class="trends-list">
+            <li><strong>Redes 5G:</strong> Implementación de tecnología 5G para aumentar la velocidad y capacidad de las redes móviles.</li>
+            <li><strong>IoT (Internet de las Cosas):</strong> Integración de dispositivos IoT en la infraestructura de red para mejorar la conectividad y recopilación de datos.</li>
+            <li><strong>Inteligencia Artificial en Redes:</strong> Uso de IA para la gestión proactiva de la red y la detección de amenazas de seguridad.</li>
+            <li><strong>Automatización de Redes:</strong> Implementación de soluciones que permiten la automatización en la configuración y gestión de redes para aumentar la eficiencia.</li>
+        </ul>
+
+        <h2>Nuestras Marcas</h2>
+        <div class="icon-list">
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI4GMAoCXe-YJKHQ1Iay4Bq0plHJIHnvtg1w&s" alt="MikroTik" class="brand-icon">
+                <p><strong>MikroTik:</strong> Soluciones de enrutamiento y conectividad para pequeñas y medianas empresas.</p>
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZRAzpFxQoZYyrNnNM2TKFwDGmXT5dldgZQ&s" alt="Cisco" class="brand-icon">
+                <p><strong>Cisco:</strong> Equipos de red y soluciones avanzadas en seguridad perimetral, routing y switching de alto rendimiento.</p>
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjX3G9jEw3mZl597DgvNLqt01oCMz3ujOXw&s" alt="Fortigate" class="brand-icon">
+                <p><strong>Fortinet:</strong> Firewalls y soluciones integrales de seguridad para proteger la red y asegurar la continuidad del negocio.</p>
+            </div>
+            <div class="tech-item">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShg5Y0U73IHeSyPeyktJdUZvkCQxMHE15_nA&s" alt="Ubiquiti" class="brand-icon">
+                <p><strong>Ubiquiti:</strong> Soluciones de red escalables y asequibles, ideales para ambientes de oficina y entornos industriales.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

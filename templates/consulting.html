@@ -1,0 +1,87 @@
+<!-- templates/consulting.html -->
+{% extends 'base.html' %}
+
+{% block title %}Consultoría - INGETsoport{% endblock %}
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='consultoria.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="consulting-page">
+    <h1>Consultoría</h1>
+    <p>Brindamos servicios de consultoría para ayudarte a optimizar tus procesos y estrategias tecnológicas.</p>
+    
+    <section class="services"> 
+        <h2>Nuestros Servicios de Consultoría</h2>
+        <div class="service-list">
+            <div class="service-item">
+                <i class="fas fa-lightbulb service-icon"></i>
+                <strong>Asesoría Estratégica:</strong>
+                <p>Ofrecemos análisis detallados y recomendaciones personalizadas para mejorar tu estrategia tecnológica.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-check-circle service-icon"></i>
+                <strong>Evaluación de Proyectos:</strong>
+                <p>Evaluamos tus proyectos actuales para asegurar que cumplen con los objetivos y requisitos técnicos.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-cogs service-icon"></i>
+                <strong>Implementación de Soluciones:</strong>
+                <p>Ayudamos en la implementación de soluciones tecnológicas que se alineen con tus metas de negocio.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-chart-line service-icon"></i>
+                <strong>Optimización de Procesos:</strong>
+                <p>Identificamos áreas de mejora en tus procesos para incrementar la eficiencia y reducir costos.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-shield-alt service-icon"></i>
+                <strong>Gestión de Riesgos:</strong>
+                <p>Te ayudamos a identificar y mitigar riesgos tecnológicos que puedan afectar tu negocio.</p>
+            </div>
+            <!-- Nuevos servicios -->
+            <div class="service-item">
+                <i class="fas fa-user-shield service-icon"></i>
+                <strong>Consultoría en Ciberseguridad:</strong>
+                <p>Ofrecemos asesoramiento para proteger tus sistemas y datos ante amenazas cibernéticas.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-network-wired service-icon"></i>
+                <strong>Implementación de Infraestructura IT:</strong>
+                <p>Te ayudamos a diseñar e implementar una infraestructura tecnológica que soporte tu negocio.</p>
+            </div>
+            <div class="service-item">
+                <i class="fas fa-chart-pie service-icon"></i>
+                <strong>Analítica de Datos:</strong>
+                <p>Desarrollamos soluciones de análisis de datos que permiten una mejor toma de decisiones.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects">
+        <h2>Ejemplos de Proyectos Realizados</h2>
+        <div class="project">
+            <h3>Transformación Digital en Retail</h3>
+            <p>Asesoramos a una cadena de tiendas en su proceso de digitalización, logrando integrar soluciones de e-commerce que aumentaron sus ventas online en un 50% en un año.</p>
+        </div>
+        <div class="project">
+            <h3>Optimización de Sistemas en Logística</h3>
+            <p>Implementamos un sistema de gestión de inventarios que redujo el tiempo de procesamiento de pedidos en un 30%, mejorando la satisfacción del cliente.</p>
+        </div>
+        <div class="project">
+            <h3>Mejora de Procesos en Finanzas</h3>
+            <p>Realizamos una auditoría de procesos en una empresa financiera, recomendando prácticas que resultaron en una reducción de costos operativos del 20%.</p>
+        </div>
+        <div class="project">
+            <h3>Desarrollo de Estrategias de Ciberseguridad</h3>
+            <p>Asesoramos a una empresa tecnológica en la implementación de medidas de seguridad, resultando en la reducción de incidentes de seguridad en un 75% en seis meses.</p>
+        </div>
+    </section>
+
+    <section class="call-to-action">
+        <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
+        <p>Contacta con nosotros hoy mismo para obtener una consultoría personalizada.</p>
+        <a href="/contact" class="cta-button">Contáctanos</a>
+    </section>
+</div>
+{% endblock %}

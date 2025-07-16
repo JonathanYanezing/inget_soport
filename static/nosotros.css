@@ -1,0 +1,87 @@
+/* NOSOTROS */
+.about {
+    background: #ffffff; /* Fondo blanco */
+    color: #333; /* Color de texto oscuro */
+    padding: 40px; /* Espaciado interno */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); /* Sombra más suave */
+    text-align: center; /* Centramos el contenido */
+    margin: 30px 0; /* Espaciado alrededor de la sección */
+}
+
+.about-content {
+    display: flex; /* Disposición en fila para imagen y texto */
+    flex-wrap: wrap; /* Permite que se ajusten en pantallas más pequeñas */
+    align-items: center; /* Alinea verticalmente el contenido */
+    justify-content: center; /* Centra el contenido */
+}
+
+.about-image {
+    flex: 1 1 40%; /* Ajusta el tamaño de la imagen */
+    margin-right: 20px; /* Espacio entre imagen y texto */
+}
+
+.about-image img {
+    max-width: 100%; /* Asegura que la imagen no exceda el contenedor */
+    border-radius: 15px; /* Esquinas redondeadas */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra en la imagen */
+}
+
+.about-text {
+    flex: 1 1 50%; /* Ajusta el tamaño del texto */
+    text-align: left; /* Alineación a la izquierda */
+}
+
+.section-title {
+    font-size: 2.5rem; /* Título principal */
+    margin-bottom: 20px;
+    color: #3498db; /* Color del título en azul */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra para el título */
+}
+
+.sub-title {
+    font-size: 1.8rem; /* Tamaño de los subtítulos */
+    margin-top: 20px; /* Espacio superior */
+    margin-bottom: 10px; /* Espacio inferior */
+    position: relative; /* Para agregar un efecto decorativo */
+    color: #e74c3c; /* Color del subtítulo en rojo */
+}
+
+.sub-title::before {
+    content: ""; /* Crear un decorativo antes del subtítulo */
+    display: block;
+    width: 60px; /* Ancho de la línea */
+    height: 4px; /* Altura de la línea */
+    background: #3498db; /* Color azul */
+    margin: 0 auto; /* Centrar la línea */
+    margin-bottom: 10px; /* Espacio entre la línea y el texto */
+}
+
+.about p {
+    font-size: 1.1rem; /* Tamaño del texto */
+    line-height: 1.6; /* Espaciado entre líneas */
+    margin-bottom: 15px; /* Espacio entre párrafos */
+    color: #555; /* Color de texto gris */
+}
+
+.values-list {
+    list-style-type: none; /* Sin puntos en la lista */
+    padding: 0; /* Sin relleno */
+    display: flex; /* Disposición en fila */
+    justify-content: center; /* Centra la lista */
+}
+
+.values-list li {
+    background: #ecf0f1; /* Fondo gris claro */
+    color: #2c3e50; /* Color del texto en oscuro */
+    border-radius: 30px; /* Esquinas redondeadas */
+    padding: 12px 25px; /* Espaciado interno */
+    margin: 0 10px; /* Espacio entre elementos */
+    transition: transform 0.3s, background 0.3s; /* Transición suave */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+.values-list li:hover {
+    transform: translateY(-5px); /* Eleva el elemento al pasar el ratón */
+    background: #d5dbdb; /* Color de fondo al pasar el ratón */
+}

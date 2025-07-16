@@ -1,0 +1,139 @@
+<!-- templates/ventas.html -->
+{% extends 'base.html' %}
+
+{% block title %}Ventas de Tecnología{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
+{% endblock %}
+
+
+{% block content %}
+<div class="ventas-section">
+    <h1>Ventas de Tecnología</h1>
+    <p>Encuentra aquí las mejores opciones en tecnología: laptops, PCs, impresoras, periféricos y mucho más. Ofrecemos productos de alta calidad para satisfacer tus necesidades tecnológicas.</p>
+    
+    <div class="productos-lista">
+        <div class="producto-item">
+            <i class="fas fa-laptop"></i>
+            <h2>Laptop Dell Inspiron</h2>
+            <p>Laptop de alto rendimiento con procesador Intel i7 y 16GB RAM.</p>
+            <p><strong>Categoría:</strong> Laptops</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-laptop"></i>
+            <h2>MacBook Pro 13"</h2>
+            <p>MacBook Pro con chip M1, perfecto para diseño y multimedia.</p>
+            <p><strong>Categoría:</strong> Laptops</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-desktop"></i>
+            <h2>PC Gamer ASUS ROG</h2>
+            <p>PC Gamer con tarjeta gráfica RTX 3080 y 32GB RAM.</p>
+            <p><strong>Categoría:</strong> PCs</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-print"></i>
+            <h2>Impresora Epson EcoTank</h2>
+            <p>Impresora multifuncional con sistema de tanque de tinta.</p>
+            <p><strong>Categoría:</strong> Impresoras</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-tv"></i>
+            <h2>Monitor Samsung 4K UHD</h2>
+            <p>Monitor de 27" con resolución 4K UHD y tecnología HDR.</p>
+            <p><strong>Categoría:</strong> Monitores</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-keyboard"></i>
+            <h2>Teclado mecánico RGB Corsair</h2>
+            <p>Teclado mecánico con retroiluminación RGB y switches Cherry MX.</p>
+            <p><strong>Categoría:</strong> Periféricos</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-mouse"></i>
+            <h2>Mouse Logitech MX Master 3</h2>
+            <p>Mouse inalámbrico ergonómico, ideal para productividad.</p>
+            <p><strong>Categoría:</strong> Periféricos</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-hdd"></i>
+            <h2>Disco Duro Externo WD 1TB</h2>
+            <p>Almacenamiento externo con capacidad de 1TB y USB 3.0.</p>
+            <p><strong>Categoría:</strong> Almacenamiento</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-microchip"></i>
+            <h2>SSD Samsung 970 EVO 500GB</h2>
+            <p>Unidad SSD M.2 NVMe para alto rendimiento.</p>
+            <p><strong>Categoría:</strong> Almacenamiento</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-headphones"></i>
+            <h2>Auriculares Sony WH-1000XM4</h2>
+            <p>Auriculares con cancelación de ruido y sonido de alta calidad.</p>
+            <p><strong>Categoría:</strong> Audio</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-microphone"></i>
+            <h2>Micrófono USB Blue Yeti</h2>
+            <p>Micrófono de calidad profesional para streaming y grabaciones.</p>
+            <p><strong>Categoría:</strong> Audio</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-camera"></i>
+            <h2>Cámara Web Logitech C920</h2>
+            <p>Cámara web HD con resolución 1080p, ideal para videollamadas.</p>
+            <p><strong>Categoría:</strong> Cámaras</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-wifi"></i>
+            <h2>Router TP-Link Archer AX50</h2>
+            <p>Router Wi-Fi 6 de alta velocidad, perfecto para hogares conectados.</p>
+            <p><strong>Categoría:</strong> Redes</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-tablet-alt"></i>
+            <h2>Tablet Samsung Galaxy Tab S7</h2>
+            <p>Tablet con pantalla de 11" y soporte para S Pen.</p>
+            <p><strong>Categoría:</strong> Tablets</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-watch"></i>
+            <h2>Smartwatch Apple Watch Series 6</h2>
+            <p>Reloj inteligente con monitor de salud y GPS integrado.</p>
+            <p><strong>Categoría:</strong> Wearables</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-robot"></i>
+            <h2>Robot Aspirador Roomba i7+</h2>
+            <p>Robot aspirador con mapeo inteligente y auto-vaciado.</p>
+            <p><strong>Categoría:</strong> Hogar Inteligente</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-bolt"></i>
+            <h2>Cargador Rápido Anker 30W</h2>
+            <p>Cargador de pared con carga rápida compatible con USB-C.</p>
+            <p><strong>Categoría:</strong> Accesorios</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-gamepad"></i>
+            <h2>Controlador Xbox Series X</h2>
+            <p>Controlador inalámbrico compatible con Xbox y PC.</p>
+            <p><strong>Categoría:</strong> Videojuegos</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-plug"></i>
+            <h2>Enchufe Inteligente TP-Link</h2>
+            <p>Controla tus dispositivos desde tu teléfono con este enchufe inteligente.</p>
+            <p><strong>Categoría:</strong> Hogar Inteligente</p>
+        </div>
+        <div class="producto-item">
+            <i class="fas fa-sd-card"></i>
+            <h2>Tarjeta MicroSD SanDisk 128GB</h2>
+            <p>Almacenamiento portátil de alta velocidad para dispositivos móviles.</p>
+            <p><strong>Categoría:</strong> Almacenamiento</p>
+        </div>
+    </div>
+</div>
+{% endblock %}

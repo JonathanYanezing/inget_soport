@@ -1,0 +1,224 @@
+/* INDEX */
+
+/* Hero Section */
+.hero {
+    background-image: url('https://media.licdn.com/dms/image/v2/D4D12AQGE1zg86IDZKw/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1704226643846?e=2147483647&v=beta&t=FCFO6CMAbtaVcU7jatXmC79ffyM3nprx85olo_qw0lw');
+    background-size: cover;
+    background-position: center;
+    padding: 150px 20px;
+    color: white;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 1s; /* Animación de entrada */
+}
+
+.hero:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+/* Estilos del botón "Explora Nuestros Servicios" */
+.btn-explore {
+    background-color: #ffc107;
+    color: #ffffff;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none; /* Sin subrayado */
+    display: inline-block; /* Para el comportamiento del botón */
+}
+
+.btn-explore:hover {
+    background-color: #e0a800; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Escala al pasar el ratón */
+}
+
+/* Estilos para las secciones */
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Sección de Acerca de INGETSoport */
+.about {
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    margin: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centramos el texto */
+    transition: transform 0.3s ease; /* Transición suave al pasar el ratón */
+}
+
+.about:hover {
+    transform: translateY(-5px); /* Movimiento al pasar el ratón */
+}
+
+.section-title {
+    font-family: 'Verdana', sans-serif; /* Cambiar a una fuente más elegante */
+    font-size: 2.5rem; /* Tamaño de fuente uniforme */
+    color: #ff4081; /* Color vibrante (rosado) */
+    font-weight: bold; /* Negrita */
+    text-align: center; /* Centrar el texto */
+    margin: 40px 0 20px; /* Espaciado superior e inferior */
+}
+
+/* Ajustes al texto de Acerca de */
+.about p {
+    margin-bottom: 20px;
+    margin-top: 30px; /* Espacio adicional entre el encabezado y el texto */
+}
+
+/* Estilos para la sección de Servicios Destacados */
+.services {
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    text-align: center; /* Centramos el texto */
+}
+
+/* Ajustes para Nuestros Servicios */
+.services-title {
+    margin: 50px 0 20px; /* Espacio entre el título y el contenido */
+    font-family: 'Verdana', sans-serif; /* Cambiar a una fuente más elegante */
+    font-size: 2.5rem; /* Tamaño de fuente uniforme */
+    color: #ff4081; /* Color vibrante (rosado) */
+    font-weight: bold; /* Negrita */
+}
+
+/* Espaciado entre "Nuestros Servicios" y el texto que le sigue */
+.services-title + p {
+    margin-top: 20px; /* Espacio adicional */
+}
+
+/* Espaciado entre "Nuestros Servicios" y las imágenes */
+.services-container {
+    margin-top: 20px; /* Espacio entre el título y las imágenes */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre servicios */
+    justify-content: center; /* Centrar los elementos */
+}
+
+.service {
+    background: white;
+    border-radius: 8px;
+    flex: 1 1 calc(30% - 20px); /* Ajusta el tamaño de las tarjetas */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Efecto de movimiento */
+    display: flex; /* Para alinear contenido */
+    flex-direction: column; /* Alinear contenido verticalmente */
+    justify-content: space-between; /* Espaciado entre los elementos */
+}
+
+.service:hover {
+    transform: translateY(-5px); /* Movimiento al pasar el ratón */
+}
+
+/* Asegura que todas las imágenes tengan el mismo tamaño */
+.service img {
+    width: 100%; /* Igualamos el tamaño de las imágenes */
+    height: 200px; /* Altura fija para uniformidad */
+    object-fit: cover; /* Mantiene la proporción de la imagen */
+    border-radius: 8px;
+}
+
+.service h3 {
+    margin: 15px 0;
+    color: #007bff; /* Color azul */
+}
+
+/* Estilos para los botones en "Nuestros Servicios" */
+.service .learn-more {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transición suave */
+    margin-top: auto; /* Empuja el botón hacia abajo */
+}
+
+.service .learn-more:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el ratón */
+    transform: scale(1.05); /* Efecto de aumento al pasar el ratón */
+}
+
+/* Sección de Beneficios */
+.benefits {
+    padding: 30px;
+    text-align: center; /* Centramos el texto */
+}
+
+/* Añadir margen inferior a los títulos de beneficios */
+.benefits h2 {
+    margin-bottom: 20px; /* Espaciado entre el título y el contenido */
+}
+
+/* Ajustes para "¿Por Qué Elegirnos?" */
+.benefits-title {
+    margin: 50px 0; /* Espacio entre el título y el contenido */
+    font-family: 'Verdana', sans-serif; /* Cambiar a una fuente más elegante */
+    font-size: 2.5rem; /* Tamaño de fuente uniforme */
+    color: #ff4081; /* Color vibrante (rosado) */
+    font-weight: bold; /* Negrita */
+}
+
+/* Espaciado entre "¿Por Qué Elegirnos?" y el texto que le sigue */
+.benefits-title + p {
+    margin-top: 20px; /* Espacio adicional */
+}
+
+/* Contenedor de beneficios */
+.benefits-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centrar los elementos */
+    gap: 20px; /* Espacio entre beneficios */
+    margin-top: 20px; /* Espacio entre el título y el contenido */
+}
+
+.benefit {
+    background: white;
+    border-radius: 8px;
+    flex: 1 1 calc(30% - 20px); /* Ajusta el tamaño de las tarjetas */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease; /* Efecto de movimiento */
+}
+
+.benefit:hover {
+    transform: translateY(-5px); /* Movimiento al pasar el ratón */
+}
+
+.benefit h3 {
+    color: #007bff; /* Color azul */
+}

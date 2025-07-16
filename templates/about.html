@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Nosotros - INGETsoport{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='nosotros.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="about">
+    <h1 class="section-title">¡Conoce a INGETsoport!</h1>
+    
+    <div class="about-content">
+        <div class="about-image">
+            <img src="https://montaner.com/wp-content/uploads/2020/07/nuevas-tecnologias-seleccion-personal-2.jpg" alt="Nuestro Equipo">
+        </div>
+        <div class="about-text">
+            <p>En INGETsoport, nuestra pasión es proporcionar soluciones tecnológicas innovadoras y personalizadas que empoderen a nuestros clientes. Nuestro equipo de expertos está listo para ayudarte a alcanzar tus metas.</p>
+            
+            <h2 class="sub-title">🌟 Nuestra Misión</h2>
+            <p>Ser el aliado tecnológico de nuestros clientes, ofreciendo soporte y desarrollo de software que impulsen su crecimiento.</p>
+
+            <h2 class="sub-title">🚀 Nuestra Visión</h2>
+            <p>Aspiramos a ser líderes en el sector, reconocidos por nuestra innovación y compromiso con el éxito de nuestros clientes.</p>
+
+            <h2 class="sub-title">🎯 Nuestros Valores</h2>
+            <ul class="values-list">
+                <li>Integridad</li>
+                <li>Compromiso</li>
+                <li>Innovación</li>
+                <li>Colaboración</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

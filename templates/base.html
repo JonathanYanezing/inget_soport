@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <title>{% block title %}Mi Página Web{% endblock %}</title>
+    {% block additional_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='nosotros.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='sf.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='soporte tecnico.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='consultoria.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='seguridad.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='redes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='contactos.css') }}">
+    {% endblock %}
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='assets/images/logo.png') }}" alt="Logo INGETSoport" class="logo">
+            <nav>
+                <ul class="menu">
+                    <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('about') }}">Nosotros</a></li>
+                    <li class="dropdown">
+                        <a href="{{ url_for('services') }}" class="dropdown-btn">Servicios</a>
+                        <ul class="dropdown-content">
+                            <li><a href="{{ url_for('software_development') }}">Desarrollo de Software</a></li>
+                            <li><a href="{{ url_for('technical_support') }}">Soporte Técnico</a></li>
+                            <li><a href="{{ url_for('consulting') }}">Consultoría</a></li>
+                            <li><a href="{{ url_for('cybersecurity') }}">Ciberseguridad</a></li>
+                            <li><a href="{{ url_for('network_telecom') }}">Redes y Telecomunicaciones</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="{{ url_for('ventas') }}">Ventas</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <p>Email: <a href="mailto:info@ingetsoport.com">info@ingetsoport.com</a></p>
+                <p>Contacto: 0992961062</p>
+            </div>
+            <p class="footer-text">© 2024 INGETSoport - Innovación y Gestión de Soporte Tecnológico</p>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+
+    <!-- Botón de WhatsApp -->
+    <div class="whatsapp-container">
+        <a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+            <i class="fab fa-whatsapp" style="font-size: 36px; color: green;"></i>
+        </a>
+    </div>
+
+    <!-- Asistente Virtual -->
+    <div id="chatbot">
+        <div class="header">
+            <img class="assistant-image" src="https://png.pngtree.com/png-clipart/20231023/original/pngtree-professional-virtual-assistant-3d-illustration-png-image_13398911.png" alt="Asistente Virtual">
+            Asistente Virtual
+            <span id="minimizeButton" style="cursor: pointer; font-weight: bold; margin-left: auto;">—</span> <!-- Opción de minimizar -->
+        </div>
+        <div id="messages"></div>
+        <input type="text" id="userInput" placeholder="Escribe tu mensaje..." autocomplete="off">
+        <button id="sendButton">Enviar</button>
+    </div>
+
+    <script>
+        const chatbot = document.getElementById('chatbot');
+        const userInput = document.getElementById('userInput');
+        const messages = document.getElementById('messages');
+        const sendButton = document.getElementById('sendButton');
+        const minimizeButton = document.getElementById('minimizeButton');
+
+        let isMinimized = false; // Estado de minimización
+
+        // Función para minimizar y restaurar el asistente
+        minimizeButton.onclick = function() {
+            if (!isMinimized) {
+                chatbot.style.height = '50px'; // Altura mínima del asistente
+                messages.style.display = 'none'; // Oculta el área de mensajes
+                userInput.style.display = 'none'; // Oculta el campo de entrada
+                isMinimized = true; // Cambia el estado a minimizado
+            } else {
+                chatbot.style.height = 'auto'; // Restaura la altura original
+                messages.style.display = 'block'; // Muestra el área de mensajes
+                userInput.style.display = 'block'; // Muestra el campo de entrada
+                isMinimized = false; // Cambia el estado a restaurado
+            }
+        };
+
+        // Función para sanitizar la entrada del usuario
+        function sanitizeInput(input) {
+            const element = document.createElement('div');
+            element.innerText = input; // Convertir a texto para evitar inyección HTML
+            return element.innerHTML; // Retornar el texto seguro
+        }
+
+        // Lógica del asistente virtual
+        sendButton.onclick = async function() {
+            const userMessage = sanitizeInput(userInput.value);
+            if (userMessage) {
+                messages.innerHTML += `<div><strong>Tú:</strong> ${userMessage}</div>`;
+                userInput.value = '';
+
+                // Respuesta del asistente usando la API de OpenAI
+                const botResponse = await getBotResponse(userMessage);
+                setTimeout(() => {
+                    messages.innerHTML += `<div><strong>Asistente:</strong> ${botResponse}</div>`;
+                    messages.scrollTop = messages.scrollHeight; // Desplazar hacia abajo
+                }, 500); // Añadir una pequeña pausa para simular "pensamiento"
+            }
+        };
+
+        // Función que simula respuestas variadas del asistente virtual usando OpenAI
+        async function getBotResponse(userMessage) {
+            try {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer TU_API_KEY` // Reemplaza con tu API Key
+                    },
+                    body: JSON.stringify({
+                        model: "gpt-3.5-turbo", // O el modelo que elijas
+                        messages: [{ role: "user", content: userMessage }]
+                    })
+                });
+
+                const data = await response.json();
+                return data.choices[0].message.content;
+            } catch (error) {
+                console.error('Error al obtener respuesta del asistente:', error);
+                return "Lo siento, hubo un error al procesar tu solicitud.";
+            }
+        }
+
+        // Función para inicializar el chatbot al cargar la página
+        window.onload = function() {
+            sendMessage("¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?");
+        };
+
+        // Función para enviar un mensaje
+        function sendMessage(text) {
+            messages.innerHTML += `<div><strong>Asistente:</strong> ${text}</div>`;
+            messages.scrollTop = messages.scrollHeight; // Desplazar hacia abajo
+        }
+    </script>
+
+</body>
+</html>

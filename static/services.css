@@ -1,0 +1,110 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #e6f2f2; /* Fondo suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #00695c; /* Verde oscuro para el título principal */
+    font-size: 2.5em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+h1:hover {
+    color: #004d40; /* Verde más oscuro al pasar el ratón */
+}
+
+p {
+    text-align: center;
+    font-size: 1.2em;
+    margin: 0 auto 20px auto;
+    width: 80%;
+    line-height: 1.6;
+}
+
+.service-overview {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 1200px;
+}
+
+.service-card {
+    background-color: #ffffff; 
+    border-radius: 10px; /* Bordes más redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    margin: 15px;
+    padding: 20px;
+    flex: 1 1 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 300px; /* Limitar el ancho máximo de las tarjetas */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+.service-card h2 {
+    color: #00796b; /* Verde claro para los títulos de las tarjetas */
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.service-card h2:hover {
+    color: #004d40; /* Verde más oscuro al pasar el ratón */
+}
+
+.service-card p {
+    font-size: 1em;
+    color: #555;
+}
+
+.service-image {
+    width: 100%; /* Asegura que las imágenes ocupen todo el ancho de la tarjeta */
+    height: 200px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Mantiene la proporción y recorta si es necesario */
+    border-radius: 10px; /* Bordes redondeados para las imágenes */
+    margin-bottom: 15px; /* Espacio entre la imagen y el texto */
+}
+
+.btn {
+    display: inline-block;
+    background-color: #4caf50; /* Verde brillante */
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1em;
+    margin: 20px auto; /* Margen superior para separación */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center; /* Centrar el texto dentro del botón */
+}
+
+.btn:hover {
+    background-color: #388e3c; /* Verde más oscuro */
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}

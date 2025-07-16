@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}Servicios{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1>Nuestros Servicios</h1>
+<p>En INGETsoport, ofrecemos una amplia gama de servicios diseñados para impulsar el éxito de tu negocio. Nuestro enfoque se centra en soluciones efectivas que se adaptan a las necesidades únicas de cada cliente. Aquí te presentamos un vistazo general de lo que hacemos:</p>
+
+<div class="service-overview">
+    <div class="service-card">
+        <h2>Soluciones Innovadoras</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHRGF-JJIa4BCJrgJwlBhQoWEwSbeFamSYBQ&s" alt="Soluciones Innovadoras" class="service-image">
+        <p>Desarrollamos soluciones personalizadas que optimizan los procesos y mejoran la eficiencia operativa de tu negocio.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Asistencia Dedicada</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoDFNoGV05x1rKjVzDOT5fLI5YRe9ndZ4P1g&s" alt="Asistencia Dedicada" class="service-image">
+        <p>Nuestro equipo está disponible para ofrecer el apoyo necesario, asegurando que tu infraestructura tecnológica funcione sin inconvenientes.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Mejoras Estratégicas</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrh-w4L8jk3MND0WyczM9uBlYTvf6Yyb0N9Q&s" alt="Mejoras Estratégicas" class="service-image">
+        <p>Evaluamos tus sistemas actuales y proponemos estrategias que fomentan el crecimiento y la sostenibilidad a largo plazo.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Seguridad Integral</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSB6Jo4_YfLdASxJIHhSgUSf0-R3hX8LX3qA&s" alt="Seguridad Integral" class="service-image">
+        <p>Nos enfocamos en la protección de tus activos digitales con soluciones adaptadas a los retos de la ciberseguridad moderna.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Conectividad Eficiente</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTFSG6rSBUd-6Uc2a5r1N49CuIOf-p5_1jag&s" alt="Conectividad Eficiente" class="service-image">
+        <p>Implementamos redes que garantizan una comunicación fluida y segura, fundamentales para el éxito de cualquier empresa.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Administración de Servidores</h2>
+        <img src="https://i0.wp.com/www.servidordedicadoadministrado.com/wp-content/uploads/2023/11/f12cf4b87faf3babc332d745b2caa44e.jpg?fit=800%2C418&ssl=1" class="service-image">
+        <p>Ofrecemos servicios de administración y monitoreo de servidores para garantizar un rendimiento óptimo y disponibilidad continua.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Creación de Servidores con Máquinas Virtuales</h2>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFCmMUFUJfY7o_XPjwK_I0HMFMUV_S4XfVOg&s" alt="Creación de Servidores con Máquinas Virtuales" class="service-image">
+        <p>Desarrollamos y configuramos servidores virtuales que permiten un uso eficiente de recursos y escalabilidad para tu negocio.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Hardening de Servidores en la Nube Azure</h2>
+        <img src="https://softeng.blob.core.windows.net/softengpublish/invar/3da3be5c-d5ea-4673-b569-18d41eb2ebe7" alt="Hardening de Servidores en Azure" class="service-image">
+        <p>Implementamos medidas de seguridad avanzadas para fortalecer la infraestructura en la nube de Azure, garantizando la protección de tus datos.</p>
+    </div>
+
+    <!-- Nueva sección de mesas de servicios -->
+    <div class="service-card">
+        <h2>Mesas de Servicios</h2>
+        <img src="https://www.conytec.com/wp-content/uploads/2021/07/mesa-de-servicios.jpg" alt="Mesas de Servicios" class="service-image">
+        <p>Implementamos mesas de servicios que centralizan la atención al cliente, facilitando el acceso a soporte técnico y garantizando tiempos de respuesta eficientes.</p>
+    </div>
+
+    <div class="service-card">
+        <h2>Herramientas de Monitoreo</h2>
+        <img src="https://www.whatsupgold.com/images/librariesprovider2/default-album/7-considerations-1200x628.png?sfvrsn=5e21e4_2" alt="Herramientas de Monitoreo" class="service-image">
+        <p>Utilizamos herramientas de monitoreo tanto de redes como de aplicaciones para asegurar un funcionamiento óptimo y detectar problemas proactivamente.</p>
+    </div>
+</div>
+
+<p>Para obtener más información sobre cómo nuestras soluciones pueden beneficiarte, no dudes en <a class="btn" href="{{ url_for('contact') }}">contáctanos</a>.</p>
+{% endblock %}

@@ -1,0 +1,103 @@
+/* Sección de contacto */
+.contact-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Espacio alrededor */
+    background: linear-gradient(135deg, #e0f7fa, #80deea); /* Fondo degradado */
+}
+
+/* Contenedor del formulario */
+.contact-container {
+    width: 100%;
+    max-width: 600px;
+    background: #ffffff;
+    border-radius: 20px; /* Bordes redondeados */
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+    text-align: center;
+    transition: transform 0.3s; /* Animación al hacer hover */
+    display: flex;
+    flex-direction: column; /* Alinear verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+}
+
+.contact-container:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+}
+
+.contact-container h1 {
+    font-size: 2.5em; /* Título más grande */
+    color: #333;
+    margin-bottom: 15px; /* Espacio más amplio */
+}
+
+.contact-container p {
+    color: #555; /* Color de texto más suave */
+    margin-bottom: 25px; /* Espacio más amplio */
+    line-height: 1.5;
+}
+
+/* Estilo del formulario */
+.contact-form {
+    width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+}
+
+.contact-form .form-group {
+    margin-bottom: 20px; /* Espacio entre campos */
+    width: 100%; /* Asegura que los grupos de formulario sean de ancho completo */
+}
+
+.contact-form label {
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 8px; /* Espacio entre etiqueta y campo */
+    text-align: left; /* Alinear etiqueta a la izquierda */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form textarea {
+    width: 100%;
+    padding: 15px; /* Aumento de padding */
+    border: 1px solid #ddd;
+    border-radius: 10px; /* Bordes redondeados */
+    background: #f7f7f7; /* Fondo más claro */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Efecto de sombra al foco */
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Sombra en foco */
+}
+
+/* Ajustes en el área de texto */
+.contact-form textarea {
+    resize: none; /* Deshabilitar redimensionamiento */
+    height: 120px; /* Altura fija para el área de texto */
+}
+
+/* Botón de envío */
+.submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px; /* Bordes redondeados */
+    background-color: #007bff;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.2em; /* Fuente más grande */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Transiciones */
+    margin-top: 20px; /* Espacio superior */
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px); /* Efecto de elevación al pasar el mouse */
+}

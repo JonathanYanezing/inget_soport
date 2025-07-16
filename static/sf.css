@@ -1,0 +1,126 @@
+/* Estilos para las secciones de la página */
+.container {
+    max-width: 1200px; /* Ancho máximo del contenedor */
+    margin: 0 auto; /* Centra el contenedor */
+    padding: 20px; /* Espaciado interno */
+}
+
+/* Estilos para la sección de desarrollo de software */
+.software-development {
+    background-color: #f4f6f8; /* Color de fondo más claro */
+    padding: 60px 30px; /* Espaciado interno más amplio */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    margin-bottom: 50px; /* Margen inferior */
+    text-align: center; /* Centramos el contenido */
+}
+
+/* Título Principal */
+.software-development h1 {
+    font-size: 3em; /* Tamaño del título aumentado */
+    color: #2c3e50; /* Color del texto */
+    margin-bottom: 20px; /* Espacio inferior */
+    font-weight: bold; /* Negrita para el título */
+    text-transform: uppercase; /* Texto en mayúsculas */
+}
+
+/* Estilo del Párrafo */
+.software-development p {
+    font-size: 1.2em; /* Tamaño del texto aumentado */
+    margin-bottom: 40px; /* Espacio inferior aumentado */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #34495e; /* Color del texto */
+}
+
+/* Sección de Servicios */
+.services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Cuadrícula adaptable */
+    gap: 30px; /* Espacio entre los elementos */
+    margin: 30px 0; /* Margen superior e inferior */
+}
+
+/* Estilo para cada servicio */
+.service-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los servicios */
+.service-item:hover {
+    transform: translateY(-5px); /* Levanta ligeramente el elemento al pasar el ratón */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Títulos de servicios */
+.service-item h3 {
+    font-size: 1.5em; /* Tamaño del título */
+    color: #2c3e50; /* Color del título */
+    margin: 10px 0; /* Margen superior e inferior */
+}
+
+/* Iconos de servicios */
+.service-item i {
+    font-size: 2.5em; /* Tamaño del icono */
+    color: #e67e22; /* Color del icono */
+}
+
+/* Estilos para la sección de tecnologías */
+.technologies {
+    padding: 40px 30px; /* Espaciado interno */
+    text-align: center; /* Centramos el texto */
+}
+
+.tech-icons {
+    display: grid; /* Usamos una cuadrícula */
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Columna adaptable */
+    gap: 20px; /* Espacio entre los elementos */
+    justify-items: center; /* Centra los elementos */
+}
+
+.tech-item {
+    background-color: #ffffff; /* Fondo blanco */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 20px; /* Espaciado interno */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s, box-shadow 0.3s; /* Transiciones suaves */
+}
+
+/* Efecto hover para los iconos de tecnologías */
+.tech-item:hover {
+    transform: translateY(-5px); /* Levanta ligeramente el elemento al pasar el ratón */
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada al pasar el ratón */
+}
+
+/* Estilo para los iconos */
+.tech-icon {
+    font-size: 3em; /* Tamaño del icono */
+    color: #3498db; /* Color del icono */
+}
+
+/* Sección de Adaptación a tus Necesidades */
+.adaptability {
+    background-color: #f4f6f8; /* Color de fondo más claro */
+    padding: 40px 30px; /* Espaciado interno */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+    text-align: center; /* Centramos el contenido */
+}
+
+/* Títulos de sección de Adaptación */
+.adaptability h2 {
+    font-size: 2em; /* Tamaño del título */
+    color: #2c3e50; /* Color del título */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Párrafo de Adaptación */
+.adaptability p {
+    font-size: 1.2em; /* Tamaño del texto */
+    margin-bottom: 20px; /* Margen inferior */
+    line-height: 1.6; /* Espaciado entre líneas */
+    color: #34495e; /* Color del texto */
+}

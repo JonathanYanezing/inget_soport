@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block title %}Inicio - INGETSoport{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
+{% endblock %}
+
+{% block content %}
+<main>
+    <!-- Sección Hero -->
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Bienvenidos a INGETSoport</h1>
+            <p>Transformamos la tecnología en soluciones efectivas para tu negocio.</p>
+            <button class="btn-explore">Explora Nuestros Servicios</button>
+        </div>
+    </div>
+
+    <!-- Sección de Acerca de INGETSoport -->
+    <section class="about">
+        <h2>Acerca de INGETSoport</h2>
+        <p>En INGETSoport, somos un equipo de profesionales apasionados por la tecnología, dedicados a brindar soluciones innovadoras y efectivas a nuestros clientes. Con más de 10 años de experiencia en el sector, ofrecemos un amplio rango de servicios que incluyen desarrollo de software, soporte técnico, consultoría y ciberseguridad.</p>
+        <p>Nuestra misión es ayudar a las empresas a aprovechar al máximo la tecnología, mejorando su eficiencia operativa y seguridad informática. Nos comprometemos a trabajar de la mano con nuestros clientes para entender sus necesidades y ofrecerles soluciones personalizadas que se alineen con sus objetivos de negocio.</p>
+        <p>La satisfacción del cliente es nuestra prioridad. Nuestros expertos están siempre disponibles para ofrecer asistencia y soporte, asegurando que cada proyecto se complete con éxito y en tiempo. Creemos que la tecnología debe ser un aliado, no un obstáculo, y estamos aquí para hacer de eso una realidad.</p>
+    </section>
+
+    <!-- Sección de Servicios Destacados -->
+    <section class="services">
+        <h2>Nuestros Servicios</h2>
+        <div class="services-container">
+            <div class="service">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ4mTAkgdEN_yAy8_ag6a2s_Hsl0WQXTZStw&s" alt="Tecnología Innovadora">
+                <h3>Tecnología Innovadora</h3>
+                <p>Integración de las últimas tendencias tecnológicas para mejorar tu infraestructura.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+            <div class="service">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZaAhWRi_4kH02omX_HzOg1OTsL6TanuQB6A&s" alt="Desarrollo de Software">
+                <h3>Desarrollo de Software</h3>
+                <p>Creación de software a medida para satisfacer las necesidades específicas de tu empresa.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+            <div class="service">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-mshq_aug7au3six8o_nEpGfyqJTvDbnr8g&s" alt="Soporte Técnico">
+                <h3>Soporte Técnico</h3>
+                <p>Mantenimiento y asistencia técnica especializada para garantizar el óptimo funcionamiento de tu tecnología.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+            <div class="service">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz0FHy6uSI3E8u0mySGk1ZLJAVLuMwRYJTeA&s" alt="Ciberseguridad">
+                <h3>Ciberseguridad</h3>
+                <p>Protegemos la información y los sistemas de tu empresa frente a amenazas cibernéticas.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+            <div class="service">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnEsWM0uSsFF_DvXSk40cut283yWI4dUf7sA&s" alt="Consultoría">
+                <h3>Consultoría</h3>
+                <p>Asesoramiento especializado para optimizar tus procesos tecnológicos y operativos.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+            <div class="service">
+                <img src="https://netcloudengineering.com/wp-content/uploads/2017/07/ciberseguridad-comunicacion-industrial.jpg" alt="Redes y Telecomunicaciones">
+                <h3>Redes y Telecomunicaciones</h3>
+                <p>Diseño e implementación de soluciones de conectividad seguras y eficientes.</p>
+                <a href="#" class="learn-more">Aprende más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de Beneficios -->
+    <section class="benefits">
+        <h2>¿Por Qué Elegirnos?</h2>
+        <div class="benefits-container">
+            <div class="benefit">
+                <h3>Experiencia</h3>
+                <p>Más de 10 años brindando soluciones tecnológicas innovadoras para nuestros clientes.</p>
+            </div>
+            <div class="benefit">
+                <h3>Calidad</h3>
+                <p>Nos aseguramos de que nuestros servicios cumplan con los más altos estándares de calidad.</p>
+            </div>
+            <div class="benefit">
+                <h3>Compromiso</h3>
+                <p>Trabajamos de la mano con nuestros clientes para garantizar su éxito en el mundo digital.</p>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock %}

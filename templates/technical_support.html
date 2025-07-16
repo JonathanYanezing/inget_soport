@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}Soporte Técnico - INGETsoport{% endblock %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='soporte tecnico.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container support-container">
+    <div class="hero-section">
+        <div class="hero-overlay"></div> <!-- Capa de fondo de agua -->
+
+        <div class="hero-text">
+            <h1>Soporte Técnico</h1>
+            <p>En <strong>INGETsoport</strong>, nos dedicamos a proporcionar un soporte técnico integral y profesional, garantizando que tus sistemas funcionen de manera óptima. Nuestro equipo está disponible para atender tus necesidades y resolver cualquier inconveniente técnico.</p>
+        </div>
+    </div>
+
+    <section class="services">
+        <h2>Nuestros Servicios de Soporte Técnico</h2>
+        <ul class="service-list">
+            <li>
+                <strong>Asesoría Técnica:</strong><br>
+                <img src="https://soportetecno.com/wp-content/uploads/2023/06/www.soportetecno.com-14.webp" alt="Asesoría Técnica" class="service-image">
+                <p>Brindamos consultoría personalizada para identificar y resolver problemas tecnológicos, ayudándote a tomar decisiones informadas sobre tus sistemas.</p>
+            </li>
+            <li>
+                <strong>Mantenimiento Proactivo:</strong><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ147M9evFCQwxFfCXMaG_D5DsHjWmxUrtlrw&s" alt="Mantenimiento Proactivo" class="service-image">
+                <p>Implementamos monitoreo continuo y mantenimiento preventivo de tus sistemas para evitar fallos y asegurar un rendimiento óptimo.</p>
+            </li>
+            <li>
+                <strong>Soporte Remoto:</strong><br>
+                <img src="https://sollinet.com//wp-content/uploads/2022/05/soporte-tecnico-y-outsourcing-tecnnologico-SOLLINET.png" alt="Soporte Remoto" class="service-image">
+                <p>Ofrecemos asistencia técnica rápida y eficiente a través de herramientas de acceso remoto, lo que nos permite solucionar problemas sin necesidad de desplazarnos.</p>
+            </li>
+            <li>
+                <strong>Resolución de Incidencias:</strong><br>
+                <img src="https://img.freepik.com/fotos-premium/concepto-servicio-al-cliente-soporte-tecnico-tecnologia-digital_555983-4112.jpg" alt="Resolución de Incidencias" class="service-image">
+                <p>Nuestro equipo responde rápidamente a problemas técnicos y errores en tus sistemas, garantizando que tu operación no se vea afectada.</p>
+            </li>
+            <li>
+                <strong>Capacitación de Personal:</strong><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0qjsk-lR2ri1Dz2G2Z0KxG4rnXJto30jsVw&s" alt="Capacitación de Personal" class="service-image">
+                <p>Proporcionamos formación a medida para tu equipo, asegurando que puedan utilizar las herramientas tecnológicas de manera efectiva y eficiente.</p>
+            </li>
+            <li>
+                <strong>Actualizaciones de Software:</strong><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiCYb39tr-6NGrWtZiC6v5BbtKmB7DpDcAhw&s" alt="Actualizaciones de Software" class="service-image">
+                <p>Gestionamos actualizaciones y parches de seguridad para tus sistemas, asegurando que siempre estés protegido contra vulnerabilidades.</p>
+            </li>
+            <li>
+                <strong>Integración de Sistemas:</strong><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv4sEpjLhapva8hYp3G2GT1h1hX_tqhHI0rw&s" alt="Integración de Sistemas" class="service-image">
+                <p>Conectamos tus aplicaciones y herramientas, optimizando el flujo de trabajo y mejorando la colaboración entre equipos.</p>
+            </li>
+            <li>
+                <strong>Recuperación de Datos:</strong><br>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn9vdzev7zAOFIA9SQJWcB61nllVA1k4qdHQ&s" alt="Recuperación de Datos" class="service-image">
+                <p>Desarrollamos estrategias efectivas para la recuperación de datos en caso de pérdida o fallo, asegurando que tu información valiosa esté siempre a salvo.</p>
+            </li>
+            <li>
+                <strong>Soporte en Ciberseguridad:</strong><br>
+                <img src="https://www.starkcloud.com/hubfs/Ciberseguridad%20y%20Privacidad%20de%20Datos.webp" alt="Soporte en Ciberseguridad" class="service-image">
+                <p>Implementamos soluciones de ciberseguridad para proteger tus datos y sistemas de amenazas externas, asegurando un entorno seguro para tu negocio.</p>
+            </li>
+        </ul>
+    </section>
+</div>
+{% endblock %}
