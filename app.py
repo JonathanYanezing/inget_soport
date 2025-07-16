@@ -53,5 +53,3 @@ def cybersecurity():
 def network_telecom():
     return render_template('network_telecom.html')
 
-if __name__ == '__main__':
-    app.run(debug=True)
