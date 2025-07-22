@@ -1,89 +1,73 @@
-<!-- templates/cybersecurity.html -->
 {% extends 'base.html' %}
 
 {% block title %}Ciberseguridad - INGETsoport{% endblock %}
 
 {% block additional_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='seguridad.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 {% endblock %}
 
-
 {% block content %}
-<div class="cybersecurity-container">
-    <h1>Ciberseguridad</h1>
-    <p>Protegemos tu información y sistemas contra amenazas cibernéticas.</p>
-    
-    <section class="introduction">
-        <h2>¿Por qué es Importante la Ciberseguridad?</h2>
-        <p>La ciberseguridad es crucial para salvaguardar la confidencialidad, integridad y disponibilidad de la información en un mundo digital cada vez más amenazante. Un ataque cibernético no solo puede resultar en pérdidas financieras, sino también en un daño significativo a la reputación de tu empresa.</p>
+<div class="bg-gray-50 min-h-screen py-16 px-6">
+  <div class="max-w-5xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-extrabold text-blue-900 mb-6 text-center">Ciberseguridad</h1>
+    <p class="text-center text-gray-700 max-w-3xl mx-auto mb-12 text-lg md:text-xl">
+      Protegemos tu información y sistemas contra amenazas cibernéticas para mantener la confidencialidad, integridad y disponibilidad de tus datos.
+    </p>
+
+    <!-- Introducción -->
+    <section class="mb-16">
+      <h2 class="text-3xl font-semibold text-blue-800 mb-4">¿Por qué es Importante la Ciberseguridad?</h2>
+      <p class="text-gray-700 leading-relaxed text-justify">
+        La ciberseguridad es crucial para salvaguardar la confidencialidad, integridad y disponibilidad de la información en un mundo digital cada vez más amenazante. Un ataque cibernético no solo puede resultar en pérdidas financieras, sino también en un daño significativo a la reputación de tu empresa.
+      </p>
     </section>
 
-    <!-- Sección de Servicios de Ciberseguridad --> 
-<section class="cybersecurity-services">
-    <h2>Nuestros Servicios en Ciberseguridad</h2>
-    <div class="service-list">
-        <div class="service-item">
-            <span class="service-icon">&#128274;</span> <!-- Icono de candado -->
-            <strong>Evaluaciones de Vulnerabilidad</strong>
-            <p>Realizamos análisis exhaustivos de tus sistemas para identificar vulnerabilidades y debilidades.</p>
+    <!-- Servicios -->
+    <section class="mb-20">
+      <h2 class="text-3xl font-bold text-blue-800 mb-10 text-center">Nuestros Servicios en Ciberseguridad</h2>
+      <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
+        {% for icon, title, desc in [
+          ('🔒', 'Evaluaciones de Vulnerabilidad', 'Análisis exhaustivos para identificar debilidades en tus sistemas.'),
+          ('💻', 'Implementación de Herramientas de Seguridad', 'Instalamos y configuramos soluciones avanzadas para proteger tus datos.'),
+          ('🛠️', 'Pruebas de Penetración (Ethical Hacking)', 'Simulamos ataques para evaluar la seguridad de tus sistemas.'),
+          ('⚡', 'Monitoreo de Seguridad', 'Monitoreo continuo para detectar y responder a amenazas.'),
+          ('📚', 'Capacitación en Ciberseguridad', 'Formamos a tu equipo para reconocer y actuar ante amenazas.'),
+          ('🔥', 'Consultoría en Ciberseguridad', 'Asesoramos en estrategias para fortalecer tu seguridad.'),
+          ('🔐', 'Auditorías de Seguridad', 'Evaluamos la efectividad de tus medidas de seguridad actuales.'),
+          ('⚡', 'Recuperación ante Desastres', 'Planes para garantizar la continuidad de tu negocio.'),
+        ] %}
+        <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-start space-y-3 hover:shadow-lg transition">
+          <span class="text-5xl mb-2">{{ icon }}</span>
+          <h3 class="text-xl font-semibold text-blue-800">{{ title }}</h3>
+          <p class="text-gray-600 text-sm">{{ desc }}</p>
         </div>
-        <div class="service-item">
-            <span class="service-icon">&#128188;</span> <!-- Icono de computadora -->
-            <strong>Implementación de Herramientas de Seguridad</strong>
-            <p>Instalamos y configuramos herramientas avanzadas para proteger tus datos.</p>
-        </div>
-        <div class="service-item">
-            <span class="service-icon">&#128736;</span> <!-- Icono de seguridad -->
-            <strong>Pruebas de Penetración (Ethical Hacking)</strong>
-            <p>Simulamos ataques cibernéticos para evaluar la seguridad de tus sistemas.</p>
-        </div>
-        <div class="service-item">
-            <span class="service-icon">&#9889;</span> <!-- Icono de peligro -->
-            <strong>Monitoreo de Seguridad</strong>
-            <p>Proporcionamos monitoreo continuo de tus sistemas para detectar y responder a amenazas.</p>
-        </div>
-        <div class="service-item">
-            <span class="service-icon">&#128218;</span> <!-- Icono de libro -->
-            <strong>Capacitación en Ciberseguridad</strong>
-            <p>Ofrecemos formación a tu personal para que reconozcan amenazas y adopten buenas prácticas de seguridad.</p>
-        </div>
-        <div class="service-item">
-            <span class="service-icon">&#128293;</span> <!-- Icono de escudo -->
-            <strong>Consultoría en Ciberseguridad</strong>
-            <p>Asesoramos sobre las mejores prácticas y estrategias para fortalecer la ciberseguridad de tu organización.</p>
-        </div>
-        <!-- Nuevos servicios -->
-        <div class="service-item">
-            <span class="service-icon">&#128274;</span> <!-- Icono de candado -->
-            <strong>Auditorías de Seguridad</strong>
-            <p>Realizamos auditorías exhaustivas para evaluar la efectividad de tus medidas de seguridad actuales.</p>
-        </div>
-        <div class="service-item">
-            <span class="service-icon">&#9889;</span> <!-- Icono de peligro -->
-            <strong>Recuperación ante Desastres</strong>
-            <p>Desarrollamos planes de recuperación ante desastres para garantizar la continuidad de tu negocio.</p>
-        </div>
-    </div>
-</section>
-
-    <!-- Sección de Beneficios -->
-    <section class="benefits">
-        <h2>Beneficios de Nuestros Servicios</h2>
-        <ul>
-            <li>🔒 Mejora de la Seguridad General de tu Organización</li>
-            <li>📈 Aumento de la Confianza de tus Clientes</li>
-            <li>💰 Reducción de Costos a Largo Plazo</li>
-            <li>🛡️ Protección de Activos Críticos</li>
-            <li>📊 Informes y Análisis Detallados</li>
-            <li>🚀 Optimización de Procesos de Seguridad</li>
-        </ul>
+        {% endfor %}
+      </div>
     </section>
 
-    <!-- Sección de Llamado a la Acción -->
-    <section class="call-to-action">
-        <h2>¿Listo para Proteger tu Negocio?</h2>
-        <p>Contáctanos hoy para una evaluación de ciberseguridad gratuita.</p>
-        <a href="/contact" class="cta-button">Contáctanos</a>
+    <!-- Beneficios -->
+    <section class="mb-20 max-w-3xl mx-auto">
+      <h2 class="text-3xl font-bold text-blue-800 mb-6 text-center">Beneficios de Nuestros Servicios</h2>
+      <ul class="list-disc list-inside space-y-3 text-gray-700 text-lg">
+        <li>🔒 Mejora de la Seguridad General de tu Organización</li>
+        <li>📈 Aumento de la Confianza de tus Clientes</li>
+        <li>💰 Reducción de Costos a Largo Plazo</li>
+        <li>🛡️ Protección de Activos Críticos</li>
+        <li>📊 Informes y Análisis Detallados</li>
+        <li>🚀 Optimización de Procesos de Seguridad</li>
+      </ul>
     </section>
+
+    <!-- Llamado a la acción -->
+    <section class="text-center">
+      <h2 class="text-4xl font-extrabold text-blue-700 mb-4">¿Listo para Proteger tu Negocio?</h2>
+      <p class="mb-8 text-gray-700 max-w-xl mx-auto text-lg">
+        Contáctanos hoy para una evaluación de ciberseguridad gratuita y asegura la continuidad de tu empresa.
+      </p>
+      <a href="/contact" class="inline-block bg-blue-700 text-white font-bold py-3 px-8 rounded-full shadow hover:bg-blue-800 transition">
+        Contáctanos
+      </a>
+    </section>
+  </div>
 </div>
 {% endblock %}

@@ -3,105 +3,90 @@
 {% block title %}Desarrollo de Software{% endblock %}
 
 {% block additional_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='sf.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 {% endblock %}
 
 {% block content %}
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-<div class="container">
-    <section class="software-development">
-        <h1>Desarrollo de Software</h1>
-        <p>
+<div class="max-w-7xl mx-auto px-4 py-10 text-gray-800">
+    <section class="mb-16 text-center">
+        <h1 class="text-4xl font-bold mb-4">Desarrollo de Software</h1>
+        <p class="text-lg leading-relaxed max-w-3xl mx-auto">
             En INGETsoport, somos expertos en crear soluciones de software personalizadas que transforman ideas en realidades. 
             Nuestro enfoque colaborativo garantiza que cada proyecto sea una extensión auténtica de tus necesidades y objetivos.
         </p>
+    </section>
 
-        <h2>Servicios Ofrecidos</h2>
-        <div class="services">
-            <div class="service-item">
-                <i class="fas fa-laptop-code"></i>
-                <h3>Aplicaciones</h3>
-                <p>Desarrollo de aplicaciones web y móviles de alta calidad.</p>
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Servicios Ofrecidos</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {% set services = [
+                ('fas fa-laptop-code', 'Aplicaciones', 'Desarrollo de aplicaciones web y móviles de alta calidad.'),
+                ('fas fa-plug', 'Integración', 'Integración de sistemas para optimizar flujos de trabajo.'),
+                ('fas fa-cogs', 'Software a Medida', 'Desarrollo de software a medida según tus requerimientos.'),
+                ('fas fa-sync', 'Automatización', 'Automatización de procesos empresariales para mejorar la eficiencia.'),
+                ('fas fa-shield-alt', 'Ciberseguridad', 'Implementación de soluciones de ciberseguridad para proteger tus datos.'),
+                ('fas fa-tools', 'Soporte Técnico', 'Soporte técnico y mantenimiento continuo de sistemas.'),
+                ('fas fa-cloud', 'Gestión en la Nube', 'Migración y gestión en la nube (AWS, Azure, Google Cloud).'),
+                ('fas fa-chart-line', 'SEO y Marketing Digital', 'Optimización de tu sitio para motores de búsqueda y aumento de visibilidad.'),
+                ('fas fa-robot', 'IA y Aprendizaje', 'Desarrollo de soluciones de inteligencia artificial y aprendizaje automático.')
+            ] %}
+            {% for icon, title, desc in services %}
+            <div class="flex flex-col items-center text-center bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
+                <i class="{{ icon }} text-4xl text-blue-600 mb-4"></i>
+                <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
+                <p class="text-gray-600">{{ desc }}</p>
             </div>
-            <div class="service-item">
-                <i class="fas fa-plug"></i>
-                <h3>Integración</h3>
-                <p>Integración de sistemas para optimizar flujos de trabajo.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cogs"></i>
-                <h3>Software a Medida</h3>
-                <p>Desarrollo de software a medida según tus requerimientos.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-sync"></i>
-                <h3>Automatización</h3>
-                <p>Automatización de procesos empresariales para mejorar la eficiencia.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-shield-alt"></i>
-                <h3>Ciberseguridad</h3>
-                <p>Implementación de soluciones de ciberseguridad para proteger tus datos.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-tools"></i>
-                <h3>Soporte Técnico</h3>
-                <p>Soporte técnico y mantenimiento continuo de sistemas.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cloud"></i>
-                <h3>Gestión en la Nube</h3>
-                <p>Migración y gestión en la nube (AWS, Azure, Google Cloud).</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-chart-line"></i>
-                <h3>SEO y Marketing Digital</h3>
-                <p>Optimización de tu sitio para motores de búsqueda y aumento de visibilidad.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-robot"></i>
-                <h3>IA y Aprendizaje</h3>
-                <p>Desarrollo de soluciones de inteligencia artificial y aprendizaje automático.</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
-    <section class="technologies">
-        <h2>Tecnologías que Utilizamos</h2>
-<div class="tech-icons">
-    <div class="tech-item"><i class="fab fa-python tech-icon"></i><p>Python</p></div>
-    <div class="tech-item"><i class="fab fa-js-square tech-icon"></i><p>JavaScript</p></div>
-    <div class="tech-item"><i class="fab fa-django tech-icon"></i><p>Django</p></div>
-    <div class="tech-item"><i class="fas fa-database tech-icon"></i><p>MySQL</p></div>
-    <div class="tech-item"><i class="fab fa-node-js tech-icon"></i><p>Node.js</p></div>
-    <div class="tech-item"><i class="fab fa-react tech-icon"></i><p>React</p></div>
-    <div class="tech-item"><i class="fab fa-angular tech-icon"></i><p>Angular</p></div>
-    <div class="tech-item"><i class="fab fa-java tech-icon"></i><p>Java</p></div>
-    <div class="tech-item"><i class="fab fa-aws tech-icon"></i><p>AWS</p></div>
-    <div class="tech-item"><i class="fab fa-docker tech-icon"></i><p>Docker</p></div>
-    <div class="tech-item"><i class="fab fa-linux tech-icon"></i><p>Linux</p></div>
-    <div class="tech-item"><i class="fab fa-html5 tech-icon"></i><p>HTML5</p></div>
-    <div class="tech-item"><i class="fab fa-css3-alt tech-icon"></i><p>CSS3</p></div>
-    <div class="tech-item"><i class="fab fa-android tech-icon"></i><p>Android</p></div>
-    <div class="tech-item"><i class="fab fa-apple tech-icon"></i><p>iOS</p></div>
-    <div class="tech-item"><i class="fab fa-php tech-icon"></i><p>PHP</p></div>
-    <div class="tech-item"><i class="fas fa-cloud tech-icon"></i><p>Azure</p></div>
-    <div class="tech-item"><i class="fab fa-google tech-icon"></i><p>Google Cloud</p></div>
-    <div class="tech-item"><i class="fas fa-brain tech-icon"></i><p>Machine Learning</p></div>
-    <div class="tech-item"><i class="fab fa-figma tech-icon"></i><p>Figma</p></div>
-    <div class="tech-item"><i class="fas fa-chart-line tech-icon"></i><p>Data Analysis</p></div>
-    <div class="tech-item"><i class="fab fa-graphql tech-icon"></i><p>GraphQL</p></div>
-    <div class="tech-item"><i class="fab fa-bootstrap tech-icon"></i><p>Bootstrap</p></div>
-    <div class="tech-item"><i class="fas fa-code tech-icon"></i><p>APIs</p></div>
-</div>
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold mb-6 text-center">Tecnologías que Utilizamos</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+            {% set techs = [
+                ('fab fa-python', 'Python'),
+                ('fab fa-js-square', 'JavaScript'),
+                ('fab fa-django', 'Django'),
+                ('fas fa-database', 'MySQL'),
+                ('fab fa-node-js', 'Node.js'),
+                ('fab fa-react', 'React'),
+                ('fab fa-angular', 'Angular'),
+                ('fab fa-java', 'Java'),
+                ('fab fa-aws', 'AWS'),
+                ('fab fa-docker', 'Docker'),
+                ('fab fa-linux', 'Linux'),
+                ('fab fa-html5', 'HTML5'),
+                ('fab fa-css3-alt', 'CSS3'),
+                ('fab fa-android', 'Android'),
+                ('fab fa-apple', 'iOS'),
+                ('fab fa-php', 'PHP'),
+                ('fas fa-cloud', 'Azure'),
+                ('fab fa-google', 'Google Cloud'),
+                ('fas fa-brain', 'Machine Learning'),
+                ('fab fa-figma', 'Figma'),
+                ('fas fa-chart-line', 'Data Analysis'),
+                ('fab fa-graphql', 'GraphQL'),
+                ('fab fa-bootstrap', 'Bootstrap'),
+                ('fas fa-code', 'APIs')
+            ] %}
+            {% for icon, name in techs %}
+            <div class="flex flex-col items-center bg-gray-50 p-4 rounded shadow hover:bg-white transition">
+                <i class="{{ icon }} text-3xl text-indigo-600 mb-2"></i>
+                <p class="text-sm font-medium">{{ name }}</p>
+            </div>
+            {% endfor %}
+        </div>
     </section>
 
-    <section class="adaptability">
-        <h2>Adaptación a Tus Necesidades</h2>
-        <p>En INGETsoport, entendemos que cada negocio es único. Nos comprometemos a ofrecerte soluciones personalizadas que no solo cumplan, sino que superen tus expectativas. Trabajamos contigo en cada paso del camino, desde la conceptualización hasta la implementación.</p>
-        <p>Nuestra flexibilidad nos permite adaptar nuestros servicios a diversas industrias, asegurando que cada proyecto sea relevante y eficaz. Ya sea que necesites una aplicación para mejorar la experiencia del cliente o un sistema de gestión interno, ¡estamos aquí para ayudarte!</p>
+    <section class="mb-16">
+        <h2 class="text-2xl font-semibold mb-4 text-center">Adaptación a Tus Necesidades</h2>
+        <p class="mb-4 leading-relaxed max-w-3xl mx-auto text-center">
+            En INGETsoport, entendemos que cada negocio es único. Nos comprometemos a ofrecerte soluciones personalizadas que no solo cumplan, sino que superen tus expectativas. Trabajamos contigo en cada paso del camino, desde la conceptualización hasta la implementación.
+        </p>
+        <p class="leading-relaxed max-w-3xl mx-auto text-center">
+            Nuestra flexibilidad nos permite adaptar nuestros servicios a diversas industrias, asegurando que cada proyecto sea relevante y eficaz. Ya sea que necesites una aplicación para mejorar la experiencia del cliente o un sistema de gestión interno, ¡estamos aquí para ayudarte!
+        </p>
     </section>
 </div>
-
 {% endblock %}

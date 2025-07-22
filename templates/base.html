@@ -5,24 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>{% block title %}MI PÁGINA WEB{% endblock %}</title>
 
+  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome para íconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+  <!-- Fuente Montserrat -->
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet" />
 
-  {% block additional_styles %}
-  <link rel="stylesheet" href="{{ url_for('static', filename='inicio.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='nosotros.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='services.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='sf.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='soporte tecnico.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='consultoria.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='seguridad.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='redes.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
-  <link rel="stylesheet" href="{{ url_for('static', filename='contactos.css') }}">
-  {% endblock %}
+  <style>
+    body {
+      font-family: 'Montserrat', sans-serif;
+    }
+  </style>
 </head>
-<body class="bg-gray-100 text-gray-900 font-[Montserrat]">
+<body class="bg-gray-100 text-gray-900">
 
   <!-- HEADER -->
   <header class="bg-gray-900 text-white shadow-md">
@@ -37,10 +35,11 @@
       <nav class="mt-4 sm:mt-0 w-full sm:w-auto">
         <ul class="flex flex-col sm:flex-row gap-3 sm:gap-6 font-semibold text-sm sm:text-base">
           <li><a href="{{ url_for('index') }}" class="hover:text-blue-400">Inicio</a></li>
-          <li><a href="{{ url_for('about') }}" class="hover:text-blue-400">Nosotros</a></li>
-          <li class="relative group">
+          <li><a href="{{ url_for('nosotros') }}" class="hover:text-blue-400">Nosotros</a></li>
+          <li class="relative group" onmouseenter="mostrarSubmenu()" onmouseleave="ocultarSubmenu()">
             <a href="{{ url_for('services') }}" class="hover:text-blue-400">Servicios</a>
-            <ul class="absolute hidden group-hover:block bg-white text-gray-800 mt-1 shadow-xl rounded w-56 z-50">
+            <ul id="submenu-servicios"
+                class="absolute left-0 mt-1 hidden bg-white text-gray-800 shadow-xl rounded w-56 z-50">
               <li><a href="{{ url_for('software_development') }}" class="block px-4 py-2 hover:bg-blue-100">Desarrollo de Software</a></li>
               <li><a href="{{ url_for('technical_support') }}" class="block px-4 py-2 hover:bg-blue-100">Soporte Técnico</a></li>
               <li><a href="{{ url_for('consulting') }}" class="block px-4 py-2 hover:bg-blue-100">Consultoría</a></li>
@@ -76,17 +75,15 @@
     <p class="text-center text-sm mt-4 text-gray-400">© 2024 INGETSOPORT - INNOVACIÓN Y GESTIÓN DE SOPORTE TECNOLÓGICO</p>
   </footer>
 
-<!-- BOTÓN WHATSAPP sin círculo de fondo, solo icono verde -->
-<a href="https://wa.me/593992961062" target="_blank"
-   class="fixed bottom-6 right-6 w-14 h-14 flex items-center justify-center transition hover:scale-110"
-   aria-label="WhatsApp"
-   style="background: transparent;"
->
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" class="w-10 h-10">
-    <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.553 4.086 1.522 5.86L0 24l6.31-1.57A11.916 11.916 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.255-6.237-3.48-8.52zm-8.635 16.272c-1.877 0-3.722-.507-5.34-1.464l-.383-.224-3.741.933.999-3.65-.254-.374a9.528 9.528 0 01-1.49-5.1c0-5.249 4.264-9.51 9.52-9.51 2.54 0 4.925.99 6.72 2.79a9.488 9.488 0 012.789 6.712c0 5.249-4.263 9.51-9.525 9.51zm5.15-7.204c-.285-.142-1.682-.832-1.943-.927-.26-.094-.448-.142-.637.143-.19.285-.73.927-.895 1.117-.165.19-.33.213-.615.071-.285-.142-1.204-.443-2.296-1.42-.85-.757-1.423-1.693-1.59-1.978-.166-.285-.018-.44.125-.582.128-.127.285-.33.428-.495.143-.165.19-.285.285-.475.095-.19.048-.356-.024-.497-.071-.142-.637-1.536-.873-2.11-.23-.553-.464-.48-.637-.49l-.544-.01c-.19 0-.497.07-.757.356-.26.285-.993.972-.993 2.366 0 1.393 1.017 2.74 1.16 2.93.142.19 2.005 3.06 4.85 4.29.678.292 1.205.466 1.618.596.68.215 1.3.184 1.788.112.545-.083 1.682-.686 1.92-1.348.237-.66.237-1.226.166-1.348-.071-.12-.26-.19-.544-.332z"/>
-  </svg>
-</a>
-
+  <!-- BOTÓN WHATSAPP -->
+  <a href="https://wa.me/593992961062" target="_blank"
+     class="fixed bottom-6 right-6 w-14 h-14 flex items-center justify-center transition hover:scale-110"
+     aria-label="WhatsApp"
+     style="background: transparent;">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" class="w-10 h-10">
+      <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.553 4.086 1.522 5.86L0 24l6.31-1.57A11.916 11.916 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.255-6.237-3.48-8.52zm-8.635 16.272c-1.877 0-3.722-.507-5.34-1.464l-.383-.224-3.741.933.999-3.65-.254-.374a9.528 9.528 0 01-1.49-5.1c0-5.249 4.264-9.51 9.52-9.51 2.54 0 4.925.99 6.72 2.79a9.488 9.488 0 012.789 6.712c0 5.249-4.263 9.51-9.525 9.51zm5.15-7.204c-.285-.142-1.682-.832-1.943-.927-.26-.094-.448-.142-.637.143-.19.285-.73.927-.895 1.117-.165.19-.33.213-.615.071-.285-.142-1.204-.443-2.296-1.42-.85-.757-1.423-1.693-1.59-1.978-.166-.285-.018-.44.125-.582.128-.127.285-.33.428-.495.143-.165.19-.285.285-.475.095-.19.048-.356-.024-.497-.071-.142-.637-1.536-.873-2.11-.23-.553-.464-.48-.637-.49l-.544-.01c-.19 0-.497.07-.757.356-.26.285-.993.972-.993 2.366 0 1.393 1.017 2.74 1.16 2.93.142.19 2.005 3.06 4.85 4.29.678.292 1.205.466 1.618.596.68.215 1.3.184 1.788.112.545-.083 1.682-.686 1.92-1.348.237-.66.237-1.226.166-1.348-.071-.12-.26-.19-.544-.332z"/>
+    </svg>
+  </a>
 
   <!-- CHATBOT -->
   <div id="chatbot" class="fixed bottom-20 left-4 bg-white border rounded shadow-lg w-72">
@@ -104,7 +101,9 @@
     </div>
   </div>
 
+  <!-- SCRIPT DE CHAT Y SUBMENÚ -->
   <script>
+    // CHATBOT
     const chatbot = document.getElementById('chatbot');
     const userInput = document.getElementById('userInput');
     const messages = document.getElementById('messages');
@@ -115,14 +114,12 @@
 
     minimizeButton.onclick = () => {
       if (!isMinimized) {
-        // Minimizar
         messages.style.display = 'none';
         userInput.parentElement.style.display = 'none';
         chatbot.style.height = '40px';
         minimizeButton.textContent = '+';
         isMinimized = true;
       } else {
-        // Maximizar
         messages.style.display = 'block';
         userInput.parentElement.style.display = 'flex';
         chatbot.style.height = 'auto';
@@ -136,7 +133,6 @@
       if (userMessage) {
         messages.innerHTML += `<div><strong>Tú:</strong> ${userMessage}</div>`;
         userInput.value = '';
-        // Respuesta fija sin API
         const botResponse = "Lo siento, la función de asistente con IA está temporalmente deshabilitada.";
         setTimeout(() => {
           messages.innerHTML += `<div><strong>Asistente:</strong> ${botResponse}</div>`;
@@ -148,6 +144,15 @@
     window.onload = () => {
       messages.innerHTML += `<div><strong>Asistente:</strong> ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?</div>`;
     };
+
+    // SUBMENÚ SERVICIOS
+    function mostrarSubmenu() {
+      document.getElementById('submenu-servicios').classList.remove('hidden');
+    }
+
+    function ocultarSubmenu() {
+      document.getElementById('submenu-servicios').classList.add('hidden');
+    }
   </script>
 
 </body>

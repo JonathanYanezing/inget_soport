@@ -1,87 +1,70 @@
-<!-- templates/consulting.html -->
 {% extends 'base.html' %}
 
 {% block title %}Consultoría - INGETsoport{% endblock %}
+
 {% block additional_styles %}
-<link rel="stylesheet" href="{{ url_for('static', filename='consultoria.css') }}">
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block content %}
-<div class="consulting-page">
-    <h1>Consultoría</h1>
-    <p>Brindamos servicios de consultoría para ayudarte a optimizar tus procesos y estrategias tecnológicas.</p>
-    
-    <section class="services"> 
-        <h2>Nuestros Servicios de Consultoría</h2>
-        <div class="service-list">
-            <div class="service-item">
-                <i class="fas fa-lightbulb service-icon"></i>
-                <strong>Asesoría Estratégica:</strong>
-                <p>Ofrecemos análisis detallados y recomendaciones personalizadas para mejorar tu estrategia tecnológica.</p>
+<div class="bg-gradient-to-br from-gray-50 to-blue-50 py-20 px-4">
+    <!-- Encabezado -->
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h1 class="text-5xl font-extrabold text-blue-800 mb-4 tracking-tight">Consultoría Tecnológica</h1>
+        <p class="text-lg text-gray-700">Te ayudamos a transformar y optimizar tus procesos tecnológicos con soluciones modernas y efectivas.</p>
+    </div>
+
+    <!-- Servicios -->
+    <section class="mb-24">
+        <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Nuestros Servicios de Consultoría</h2>
+        <div class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+            {% for icon, title, desc in [
+                ('fa-lightbulb', 'Asesoría Estratégica', 'Análisis y recomendaciones personalizadas para tu estrategia tecnológica.'),
+                ('fa-check-circle', 'Evaluación de Proyectos', 'Aseguramos que tus proyectos cumplan con los objetivos y requisitos técnicos.'),
+                ('fa-cogs', 'Implementación de Soluciones', 'Te acompañamos en la ejecución de soluciones tecnológicas alineadas a tu negocio.'),
+                ('fa-chart-line', 'Optimización de Procesos', 'Detectamos mejoras que aumenten la eficiencia y reduzcan costos.'),
+                ('fa-shield-alt', 'Gestión de Riesgos', 'Identificación y mitigación de riesgos tecnológicos críticos.'),
+                ('fa-user-shield', 'Consultoría en Ciberseguridad', 'Protección ante amenazas cibernéticas modernas.'),
+                ('fa-network-wired', 'Infraestructura IT', 'Diseño e implementación de infraestructuras robustas.'),
+                ('fa-chart-pie', 'Analítica de Datos', 'Soluciones que facilitan la toma de decisiones basadas en datos.')
+            ] %}
+            <div class="bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transform hover:-translate-y-1 transition duration-300 text-center">
+                <div class="text-blue-600 text-4xl mb-4">
+                    <i class="fas {{ icon }} animate-pulse"></i>
+                </div>
+                <h3 class="text-xl font-bold text-blue-800 mb-2">{{ title }}</h3>
+                <p class="text-gray-600 text-sm">{{ desc }}</p>
             </div>
-            <div class="service-item">
-                <i class="fas fa-check-circle service-icon"></i>
-                <strong>Evaluación de Proyectos:</strong>
-                <p>Evaluamos tus proyectos actuales para asegurar que cumplen con los objetivos y requisitos técnicos.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-cogs service-icon"></i>
-                <strong>Implementación de Soluciones:</strong>
-                <p>Ayudamos en la implementación de soluciones tecnológicas que se alineen con tus metas de negocio.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-chart-line service-icon"></i>
-                <strong>Optimización de Procesos:</strong>
-                <p>Identificamos áreas de mejora en tus procesos para incrementar la eficiencia y reducir costos.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-shield-alt service-icon"></i>
-                <strong>Gestión de Riesgos:</strong>
-                <p>Te ayudamos a identificar y mitigar riesgos tecnológicos que puedan afectar tu negocio.</p>
-            </div>
-            <!-- Nuevos servicios -->
-            <div class="service-item">
-                <i class="fas fa-user-shield service-icon"></i>
-                <strong>Consultoría en Ciberseguridad:</strong>
-                <p>Ofrecemos asesoramiento para proteger tus sistemas y datos ante amenazas cibernéticas.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-network-wired service-icon"></i>
-                <strong>Implementación de Infraestructura IT:</strong>
-                <p>Te ayudamos a diseñar e implementar una infraestructura tecnológica que soporte tu negocio.</p>
-            </div>
-            <div class="service-item">
-                <i class="fas fa-chart-pie service-icon"></i>
-                <strong>Analítica de Datos:</strong>
-                <p>Desarrollamos soluciones de análisis de datos que permiten una mejor toma de decisiones.</p>
-            </div>
+            {% endfor %}
         </div>
     </section>
 
-    <section class="projects">
-        <h2>Ejemplos de Proyectos Realizados</h2>
-        <div class="project">
-            <h3>Transformación Digital en Retail</h3>
-            <p>Asesoramos a una cadena de tiendas en su proceso de digitalización, logrando integrar soluciones de e-commerce que aumentaron sus ventas online en un 50% en un año.</p>
-        </div>
-        <div class="project">
-            <h3>Optimización de Sistemas en Logística</h3>
-            <p>Implementamos un sistema de gestión de inventarios que redujo el tiempo de procesamiento de pedidos en un 30%, mejorando la satisfacción del cliente.</p>
-        </div>
-        <div class="project">
-            <h3>Mejora de Procesos en Finanzas</h3>
-            <p>Realizamos una auditoría de procesos en una empresa financiera, recomendando prácticas que resultaron en una reducción de costos operativos del 20%.</p>
-        </div>
-        <div class="project">
-            <h3>Desarrollo de Estrategias de Ciberseguridad</h3>
-            <p>Asesoramos a una empresa tecnológica en la implementación de medidas de seguridad, resultando en la reducción de incidentes de seguridad en un 75% en seis meses.</p>
+    <!-- Proyectos -->
+    <section class="mb-24">
+        <h2 class="text-3xl font-bold text-center text-blue-700 mb-12">Proyectos Destacados</h2>
+        <div class="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            {% for title, desc in [
+                ('Transformación Digital en Retail', 'Asesoramos a una cadena de tiendas en su digitalización, aumentando sus ventas online un 50% en un año.'),
+                ('Optimización de Sistemas en Logística', 'Implementamos un sistema de inventarios que redujo un 30% el tiempo de pedidos.'),
+                ('Mejora de Procesos en Finanzas', 'Auditoría de procesos que redujo 20% los costos operativos.'),
+                ('Estrategias de Ciberseguridad', 'Redujimos incidentes de seguridad en un 75% en seis meses.')
+            ] %}
+            <div class="bg-white border-l-4 border-blue-600 p-6 rounded-xl shadow hover:shadow-lg transition duration-300">
+                <h3 class="text-xl font-semibold text-blue-800 mb-2">{{ title }}</h3>
+                <p class="text-gray-700">{{ desc }}</p>
+            </div>
+            {% endfor %}
         </div>
     </section>
 
-    <section class="call-to-action">
-        <h2>¿Listo para llevar tu negocio al siguiente nivel?</h2>
-        <p>Contacta con nosotros hoy mismo para obtener una consultoría personalizada.</p>
-        <a href="/contact" class="cta-button">Contáctanos</a>
+    <!-- Call to Action -->
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-16 rounded-xl shadow-lg max-w-5xl mx-auto text-center">
+        <h2 class="text-3xl font-extrabold mb-4">¿Listo para llevar tu negocio al siguiente nivel?</h2>
+        <p class="mb-6 text-lg">Contacta con nosotros hoy mismo para obtener una consultoría personalizada y comenzar tu transformación tecnológica.</p>
+        <a href="/contact" class="inline-block bg-white text-blue-800 font-bold py-3 px-8 rounded-full shadow-md hover:bg-blue-100 transition">
+            Contáctanos
+        </a>
     </section>
 </div>
 {% endblock %}
