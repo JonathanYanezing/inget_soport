@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, flash
+from flask import Flask, render_template, request, redirect, flash, send_from_directory
 import threading
 import smtplib
 from email.mime.multipart import MIMEMultipart
@@ -109,6 +109,7 @@ def cybersecurity():
 def network_telecom():
     return render_template('network_telecom.html')
 
+# Ruta para Google Search Console verification
 @app.route('/googleb4b82bf52f2d9d77.html')
 def google_verification():
     return send_from_directory('static', 'googleb4b82bf52f2d9d77.html')
