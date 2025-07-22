@@ -109,6 +109,9 @@ def cybersecurity():
 def network_telecom():
     return render_template('network_telecom.html')
 
+@app.route('/googleb4b82bf52f2d9d77.html')
+def google_verification():
+    return send_from_directory('static', 'googleb4b82bf52f2d9d77.html')
 
 if __name__ == '__main__':
     app.run(debug=True)
