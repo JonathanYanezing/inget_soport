@@ -3,7 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO -->
   <title>{% block title %}MI PÁGINA WEB{% endblock %}</title>
+  <meta name="description" content="Inget Soport brinda soluciones tecnológicas como soporte técnico, desarrollo de software, ciberseguridad, consultoría, redes y más.">
+  <meta name="keywords" content="soporte técnico, redes, inge soport, inget-soport, mantenimiento, informática, ciberseguridad, consultoría TI, Ecuador">
+  <meta name="author" content="Inget Soport">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://inget-soport.onrender.com/">
+  <meta name="theme-color" content="#1F2937">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -103,13 +112,11 @@
 
   <!-- SCRIPT DE CHAT Y SUBMENÚ -->
   <script>
-    // CHATBOT
     const chatbot = document.getElementById('chatbot');
     const userInput = document.getElementById('userInput');
     const messages = document.getElementById('messages');
     const sendButton = document.getElementById('sendButton');
     const minimizeButton = document.getElementById('minimizeButton');
-
     let isMinimized = false;
 
     minimizeButton.onclick = () => {
@@ -145,7 +152,6 @@
       messages.innerHTML += `<div><strong>Asistente:</strong> ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?</div>`;
     };
 
-    // SUBMENÚ SERVICIOS
     function mostrarSubmenu() {
       document.getElementById('submenu-servicios').classList.remove('hidden');
     }
