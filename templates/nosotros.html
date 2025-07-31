@@ -3,65 +3,280 @@
 {% block title %}Nosotros - INGETsoport{% endblock %}
 
 {% block content %}
-<section class="max-w-6xl mx-auto px-6 py-12">
-  <h1 class="text-4xl font-bold mb-10 text-center text-gray-800">¡Conoce a INGETsoport!</h1>
+<!-- Hero Section Elegante -->
+<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+  </div>
   
-  <div class="flex flex-col md:flex-row items-center gap-10">
-    <div class="md:w-1/2">
-      <img src="https://montaner.com/wp-content/uploads/2020/07/nuevas-tecnologias-seleccion-personal-2.jpg" alt="Nuestro Equipo" class="rounded-lg shadow-lg w-full object-cover" />
+  <div class="relative z-10 text-center px-6 max-w-5xl mx-auto">
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full px-6 py-3 mb-12 shadow-sm">
+        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+        <span class="text-sm font-medium text-slate-700">Más de 10 años de excelencia</span>
+      </div>
     </div>
     
-    <div class="md:w-1/2 text-gray-700 space-y-6">
-      <p class="text-lg leading-relaxed">
-        En INGETsoport, nuestra pasión es proporcionar soluciones tecnológicas innovadoras y personalizadas que empoderen a nuestros clientes. Nuestro equipo de expertos está listo para ayudarte a alcanzar tus metas.
-      </p>
+    <h1 class="text-5xl md:text-7xl font-light text-slate-900 mb-8 leading-tight">
+      Conoce a <span class="font-normal text-blue-600">INGETSoport</span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl mb-12 text-slate-600 max-w-3xl mx-auto leading-relaxed">
+      Somos un equipo de <span class="font-medium text-slate-800">profesionales apasionados</span> por la tecnología, 
+      dedicados a transformar ideas en <span class="font-medium text-slate-800">soluciones digitales</span> excepcionales
+    </p>
+    
+    <div class="flex justify-center">
+      <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Historia -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid lg:grid-cols-2 gap-20 items-center">
+      <div class="relative">
+        <div class="absolute -inset-6 bg-gradient-to-br from-blue-100 to-indigo-100 rounded-3xl blur-2xl opacity-50"></div>
+        <img 
+          src="https://montaner.com/wp-content/uploads/2020/07/nuevas-tecnologias-seleccion-personal-2.jpg" 
+          alt="Nuestro Equipo" 
+          class="relative rounded-2xl shadow-2xl w-full object-cover"
+        />
+      </div>
       
-      <div>
-        <h2 class="text-2xl font-semibold mb-2 flex items-center gap-2">
-          <span>🌟</span> Nuestra Misión
+      <div class="space-y-8">
+        <div class="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+          <span>✨</span> Nuestra Historia
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-light text-slate-900 leading-tight">
+          Una década de <span class="font-normal text-blue-600">innovación</span> y crecimiento
         </h2>
-        <p>Ser el aliado tecnológico de nuestros clientes, ofreciendo soporte y desarrollo de software que impulsen su crecimiento.</p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold mb-2 flex items-center gap-2">
-          <span>🚀</span> Nuestra Visión
-        </h2>
-        <p>Aspiramos a ser líderes en el sector, reconocidos por nuestra innovación y compromiso con el éxito de nuestros clientes.</p>
-      </div>
-
-      <div>
-        <h2 class="text-2xl font-semibold mb-3 flex items-center gap-2">
-          <span>🎯</span> Nuestros Valores
-        </h2>
-        <ul class="space-y-4 text-gray-700">
-          <li class="flex items-center gap-3 transform transition-transform hover:translate-x-3 hover:text-blue-600 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            Integridad
-          </li>
-          <li class="flex items-center gap-3 transform transition-transform hover:translate-x-3 hover:text-blue-600 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            Compromiso
-          </li>
-          <li class="flex items-center gap-3 transform transition-transform hover:translate-x-3 hover:text-blue-600 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            Innovación
-          </li>
-          <li class="flex items-center gap-3 transform transition-transform hover:translate-x-3 hover:text-blue-600 cursor-pointer">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-            </svg>
-            Colaboración
-          </li>
-        </ul>
+        
+        <p class="text-lg text-slate-600 leading-relaxed">
+          Desde nuestros inicios, hemos estado a la vanguardia de la tecnología, ayudando a empresas a transformar sus ideas en realidades digitales. Nuestro equipo combina experiencia técnica con creatividad para ofrecer soluciones únicas.
+        </p>
+        
+        <div class="grid grid-cols-2 gap-6">
+          <div class="text-center p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+            <div class="text-3xl font-light text-blue-600 mb-2">10+</div>
+            <div class="text-slate-600 font-medium">Años de Experiencia</div>
+          </div>
+          <div class="text-center p-6 bg-gradient-to-br from-emerald-50 to-teal-50 rounded-2xl border border-emerald-100">
+            <div class="text-3xl font-light text-emerald-600 mb-2">100+</div>
+            <div class="text-slate-600 font-medium">Proyectos Exitosos</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Sección de Misión y Visión -->
+<section class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+        Nuestro <span class="font-normal text-blue-600">Propósito</span>
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Guiados por valores sólidos y una visión clara del futuro tecnológico
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 gap-12">
+      <!-- Misión -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Nuestra Misión</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Ser el aliado tecnológico estratégico de nuestros clientes, ofreciendo soluciones innovadoras que impulsen su crecimiento y transformación digital, siempre con un enfoque en la excelencia.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Visión -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Nuestra Visión</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Aspiramos a ser reconocidos como líderes en el sector tecnológico, siendo referentes en innovación, calidad y compromiso. Queremos ser la primera opción para empresas que buscan transformar su negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Valores -->
+<section class="py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+        Nuestros <span class="font-normal text-blue-600">Valores</span>
+      </h2>
+      <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+        Los principios que guían cada decisión y acción en nuestro equipo
+      </p>
+    </div>
+    
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Integridad -->
+      <div class="group text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-light text-slate-900 mb-3">Integridad</h3>
+        <p class="text-slate-600">Actuamos con honestidad y transparencia en todas nuestras relaciones</p>
+      </div>
+      
+      <!-- Compromiso -->
+      <div class="group text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-light text-slate-900 mb-3">Compromiso</h3>
+        <p class="text-slate-600">Nos dedicamos completamente a cumplir las expectativas de nuestros clientes</p>
+      </div>
+      
+      <!-- Innovación -->
+      <div class="group text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-light text-slate-900 mb-3">Innovación</h3>
+        <p class="text-slate-600">Buscamos constantemente nuevas formas de resolver desafíos tecnológicos</p>
+      </div>
+      
+      <!-- Colaboración -->
+      <div class="group text-center">
+        <div class="w-20 h-20 bg-gradient-to-br from-teal-500 to-teal-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-light text-slate-900 mb-3">Colaboración</h3>
+        <p class="text-slate-600">Trabajamos en equipo para lograr resultados excepcionales</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Estadísticas -->
+<section class="py-24 bg-gradient-to-br from-slate-900 to-blue-900 relative overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute top-10 left-10 w-20 h-20 bg-white/5 rounded-full"></div>
+    <div class="absolute top-20 right-20 w-16 h-16 bg-blue-400/10 rounded-full"></div>
+    <div class="absolute bottom-20 left-1/4 w-24 h-24 bg-emerald-400/10 rounded-full"></div>
+  </div>
+  
+  <div class="relative z-10 max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-light text-white mb-6">
+        Nuestros <span class="font-normal text-blue-300">Logros</span>
+      </h2>
+      <p class="text-lg text-slate-300 max-w-2xl mx-auto">
+        Cifras que respaldan nuestro compromiso con la excelencia
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+      <div class="text-center group">
+        <div class="text-5xl md:text-6xl font-light text-white mb-4 group-hover:scale-110 transition-transform duration-300">10+</div>
+        <div class="text-slate-300 font-medium">Años de Experiencia</div>
+      </div>
+      <div class="text-center group">
+        <div class="text-5xl md:text-6xl font-light text-white mb-4 group-hover:scale-110 transition-transform duration-300">100+</div>
+        <div class="text-slate-300 font-medium">Proyectos Completados</div>
+      </div>
+      <div class="text-center group">
+        <div class="text-5xl md:text-6xl font-light text-white mb-4 group-hover:scale-110 transition-transform duration-300">100%</div>
+        <div class="text-slate-300 font-medium">Clientes Satisfechos</div>
+      </div>
+      <div class="text-center group">
+        <div class="text-5xl md:text-6xl font-light text-white mb-4 group-hover:scale-110 transition-transform duration-300">24/7</div>
+        <div class="text-slate-300 font-medium">Soporte Disponible</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección CTA -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto text-center px-6">
+    <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-12 rounded-3xl border border-blue-100">
+      <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-8">
+        ¿Listo para trabajar <span class="font-normal text-blue-600">con nosotros</span>?
+      </h2>
+      
+      <p class="text-lg text-slate-600 mb-12 max-w-2xl mx-auto">
+        Únete a nuestros clientes satisfechos y descubre cómo podemos transformar tu negocio con tecnología de vanguardia
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a href="{{ url_for('contact') }}" class="group">
+          <button class="bg-blue-600 text-white px-12 py-5 rounded-2xl text-lg font-medium hover:bg-blue-700 transition-all duration-300 hover:scale-105 shadow-lg">
+            <span class="flex items-center gap-3">
+              Contactar Ahora
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+              </svg>
+            </span>
+          </button>
+        </a>
+        
+        <a href="{{ url_for('services') }}" class="group">
+          <button class="border-2 border-blue-600 text-blue-600 px-12 py-5 rounded-2xl text-lg font-medium hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-105">
+            <span class="flex items-center gap-3">
+              Ver Servicios
+              <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+              </svg>
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Efectos de hover suaves */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+.group:hover .group-hover\:translate-x-1 {
+  transform: translateX(0.25rem);
+}
+
+/* Transiciones suaves */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transition-all.duration-500 {
+  transition-duration: 500ms;
+}
+</style>
 {% endblock %}

@@ -2,91 +2,284 @@
 
 {% block title %}Desarrollo de Software{% endblock %}
 
-{% block additional_styles %}
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-{% endblock %}
-
 {% block content %}
-<div class="max-w-7xl mx-auto px-4 py-10 text-gray-800">
-    <section class="mb-16 text-center">
-        <h1 class="text-4xl font-bold mb-4">Desarrollo de Software</h1>
-        <p class="text-lg leading-relaxed max-w-3xl mx-auto">
-            En INGETsoport, somos expertos en crear soluciones de software personalizadas que transforman ideas en realidades. 
-            Nuestro enfoque colaborativo garantiza que cada proyecto sea una extensión auténtica de tus necesidades y objetivos.
-        </p>
-    </section>
+<!-- Hero Section Elegante -->
+<section class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-[url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%239C92AC" fill-opacity="0.05"%3E%3Ccircle cx="30" cy="30" r="2"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
+  </div>
+  
+  <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+    <div class="mb-8">
+      <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-slate-200 rounded-full px-6 py-3 mb-12 shadow-sm">
+        <div class="w-2 h-2 bg-emerald-500 rounded-full"></div>
+        <span class="text-sm font-medium text-slate-700">Soluciones personalizadas</span>
+      </div>
+    </div>
+    
+    <h1 class="text-5xl md:text-7xl font-light text-slate-900 mb-8 leading-tight">
+      Desarrollo de <span class="font-normal text-blue-600">Software</span>
+    </h1>
+    
+    <p class="text-xl md:text-2xl mb-12 text-slate-600 max-w-4xl mx-auto leading-relaxed">
+      Somos expertos en crear <span class="font-medium text-slate-800">soluciones de software personalizadas</span> que transforman ideas en realidades. 
+      Nuestro enfoque colaborativo garantiza que cada proyecto sea una extensión auténtica de tus necesidades.
+    </p>
+    
+    <div class="flex justify-center">
+      <div class="w-20 h-0.5 bg-gradient-to-r from-transparent via-blue-400 to-transparent"></div>
+    </div>
+  </div>
+</section>
 
-    <section class="mb-16">
-        <h2 class="text-2xl font-semibold mb-6 text-center">Servicios Ofrecidos</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {% set services = [
-                ('fas fa-laptop-code', 'Aplicaciones', 'Desarrollo de aplicaciones web y móviles de alta calidad.'),
-                ('fas fa-plug', 'Integración', 'Integración de sistemas para optimizar flujos de trabajo.'),
-                ('fas fa-cogs', 'Software a Medida', 'Desarrollo de software a medida según tus requerimientos.'),
-                ('fas fa-sync', 'Automatización', 'Automatización de procesos empresariales para mejorar la eficiencia.'),
-                ('fas fa-shield-alt', 'Ciberseguridad', 'Implementación de soluciones de ciberseguridad para proteger tus datos.'),
-                ('fas fa-tools', 'Soporte Técnico', 'Soporte técnico y mantenimiento continuo de sistemas.'),
-                ('fas fa-cloud', 'Gestión en la Nube', 'Migración y gestión en la nube (AWS, Azure, Google Cloud).'),
-                ('fas fa-chart-line', 'SEO y Marketing Digital', 'Optimización de tu sitio para motores de búsqueda y aumento de visibilidad.'),
-                ('fas fa-robot', 'IA y Aprendizaje', 'Desarrollo de soluciones de inteligencia artificial y aprendizaje automático.')
-            ] %}
-            {% for icon, title, desc in services %}
-            <div class="flex flex-col items-center text-center bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition">
-                <i class="{{ icon }} text-4xl text-blue-600 mb-4"></i>
-                <h3 class="text-xl font-semibold mb-2">{{ title }}</h3>
-                <p class="text-gray-600">{{ desc }}</p>
-            </div>
-            {% endfor %}
+<!-- Sección de Servicios -->
+<section class="py-24 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+        Servicios <span class="font-normal text-blue-600">Ofrecidos</span>
+      </h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Soluciones integrales para impulsar tu negocio con tecnología de vanguardia
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Aplicaciones -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Aplicaciones</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Desarrollo de aplicaciones web y móviles de alta calidad con las últimas tecnologías.
+          </p>
         </div>
-    </section>
+      </div>
 
-    <section class="mb-16">
-        <h2 class="text-2xl font-semibold mb-6 text-center">Tecnologías que Utilizamos</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-            {% set techs = [
-                ('fab fa-python', 'Python'),
-                ('fab fa-js-square', 'JavaScript'),
-                ('fab fa-django', 'Django'),
-                ('fas fa-database', 'MySQL'),
-                ('fab fa-node-js', 'Node.js'),
-                ('fab fa-react', 'React'),
-                ('fab fa-angular', 'Angular'),
-                ('fab fa-java', 'Java'),
-                ('fab fa-aws', 'AWS'),
-                ('fab fa-docker', 'Docker'),
-                ('fab fa-linux', 'Linux'),
-                ('fab fa-html5', 'HTML5'),
-                ('fab fa-css3-alt', 'CSS3'),
-                ('fab fa-android', 'Android'),
-                ('fab fa-apple', 'iOS'),
-                ('fab fa-php', 'PHP'),
-                ('fas fa-cloud', 'Azure'),
-                ('fab fa-google', 'Google Cloud'),
-                ('fas fa-brain', 'Machine Learning'),
-                ('fab fa-figma', 'Figma'),
-                ('fas fa-chart-line', 'Data Analysis'),
-                ('fab fa-graphql', 'GraphQL'),
-                ('fab fa-bootstrap', 'Bootstrap'),
-                ('fas fa-code', 'APIs')
-            ] %}
-            {% for icon, name in techs %}
-            <div class="flex flex-col items-center bg-gray-50 p-4 rounded shadow hover:bg-white transition">
-                <i class="{{ icon }} text-3xl text-indigo-600 mb-2"></i>
-                <p class="text-sm font-medium">{{ name }}</p>
-            </div>
-            {% endfor %}
+      <!-- Integración -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Integración</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Integración de sistemas para optimizar flujos de trabajo y mejorar la eficiencia.
+          </p>
         </div>
-    </section>
+      </div>
 
-    <section class="mb-16">
-        <h2 class="text-2xl font-semibold mb-4 text-center">Adaptación a Tus Necesidades</h2>
-        <p class="mb-4 leading-relaxed max-w-3xl mx-auto text-center">
-            En INGETsoport, entendemos que cada negocio es único. Nos comprometemos a ofrecerte soluciones personalizadas que no solo cumplan, sino que superen tus expectativas. Trabajamos contigo en cada paso del camino, desde la conceptualización hasta la implementación.
-        </p>
-        <p class="leading-relaxed max-w-3xl mx-auto text-center">
-            Nuestra flexibilidad nos permite adaptar nuestros servicios a diversas industrias, asegurando que cada proyecto sea relevante y eficaz. Ya sea que necesites una aplicación para mejorar la experiencia del cliente o un sistema de gestión interno, ¡estamos aquí para ayudarte!
-        </p>
-    </section>
-</div>
+      <!-- Software a Medida -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Software a Medida</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Desarrollo de software personalizado según tus requerimientos específicos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Automatización -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-amber-500 to-amber-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Automatización</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Automatización de procesos empresariales para mejorar la eficiencia operativa.
+          </p>
+        </div>
+      </div>
+
+      <!-- Ciberseguridad -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Ciberseguridad</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Implementación de soluciones de ciberseguridad para proteger tus datos.
+          </p>
+        </div>
+      </div>
+
+      <!-- Soporte Técnico -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Soporte Técnico</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Soporte técnico y mantenimiento continuo de sistemas para garantizar su funcionamiento óptimo.
+          </p>
+        </div>
+      </div>
+
+      <!-- Gestión en la Nube -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">Gestión en la Nube</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Migración y gestión en la nube (AWS, Azure, Google Cloud) para escalabilidad y flexibilidad.
+          </p>
+        </div>
+      </div>
+
+      <!-- SEO y Marketing Digital -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">SEO y Marketing Digital</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Optimización de tu sitio para motores de búsqueda y aumento de visibilidad online.
+          </p>
+        </div>
+      </div>
+
+      <!-- IA y Aprendizaje -->
+      <div class="group">
+        <div class="bg-white p-8 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-2">
+          <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-2xl font-light text-slate-900 mb-4">IA y Aprendizaje</h3>
+          <p class="text-slate-600 leading-relaxed">
+            Desarrollo de soluciones de inteligencia artificial y aprendizaje automático.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Tecnologías -->
+<section class="py-24 bg-gradient-to-br from-slate-50 to-blue-50">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-20">
+      <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-6">
+        Tecnologías que <span class="font-normal text-blue-600">Utilizamos</span>
+      </h2>
+      <p class="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+        Utilizamos las tecnologías más modernas y confiables del mercado
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6">
+      {% set techs = [
+        ('Python', 'bg-blue-500'),
+        ('JavaScript', 'bg-yellow-500'),
+        ('Django', 'bg-green-600'),
+        ('MySQL', 'bg-blue-600'),
+        ('Node.js', 'bg-green-500'),
+        ('React', 'bg-blue-400'),
+        ('Angular', 'bg-red-500'),
+        ('Java', 'bg-orange-500'),
+        ('AWS', 'bg-orange-600'),
+        ('Docker', 'bg-blue-500'),
+        ('Linux', 'bg-yellow-600'),
+        ('HTML5', 'bg-orange-500'),
+        ('CSS3', 'bg-blue-500'),
+        ('Android', 'bg-green-500'),
+        ('iOS', 'bg-gray-800'),
+        ('PHP', 'bg-purple-500'),
+        ('Azure', 'bg-blue-600'),
+        ('Google Cloud', 'bg-blue-500'),
+        ('Machine Learning', 'bg-purple-600'),
+        ('Figma', 'bg-purple-500'),
+        ('Data Analysis', 'bg-green-600'),
+        ('GraphQL', 'bg-pink-500'),
+        ('Bootstrap', 'bg-purple-500'),
+        ('APIs', 'bg-indigo-500')
+      ] %}
+      {% for name, color in techs %}
+      <div class="group">
+        <div class="bg-white p-6 rounded-2xl shadow-lg border border-slate-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center">
+          <div class="w-12 h-12 {{ color }} rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+            <span class="text-white font-bold text-sm">{{ name[:2] }}</span>
+          </div>
+          <p class="text-sm font-medium text-slate-700">{{ name }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Sección de Adaptación -->
+<section class="py-24 bg-white">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <h2 class="text-4xl md:text-5xl font-light text-slate-900 mb-8">
+      Adaptación a <span class="font-normal text-blue-600">Tus Necesidades</span>
+    </h2>
+    
+    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+      <p>
+        En INGETsoport, entendemos que cada negocio es único. Nos comprometemos a ofrecerte soluciones personalizadas que no solo cumplan, sino que superen tus expectativas. Trabajamos contigo en cada paso del camino, desde la conceptualización hasta la implementación.
+      </p>
+      <p>
+        Nuestra flexibilidad nos permite adaptar nuestros servicios a diversas industrias, asegurando que cada proyecto sea relevante y eficaz. Ya sea que necesites una aplicación para mejorar la experiencia del cliente o un sistema de gestión interno, ¡estamos aquí para ayudarte!
+      </p>
+    </div>
+
+    <div class="mt-12">
+      <a href="{{ url_for('contact') }}" class="inline-flex items-center gap-3 bg-blue-600 text-white px-8 py-4 rounded-2xl font-medium hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105">
+        <span>Comienza tu Proyecto</span>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+/* Efectos de hover suaves */
+.group:hover .group-hover\:scale-110 {
+  transform: scale(1.1);
+}
+
+/* Transiciones suaves */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+.transition-all.duration-500 {
+  transition-duration: 500ms;
+}
+</style>
 {% endblock %}

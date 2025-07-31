@@ -27,138 +27,456 @@
     body {
       font-family: 'Montserrat', sans-serif;
     }
+    
+    /* Animación personalizada para el botón del chat */
+    @keyframes titilar {
+      0%, 100% { 
+        transform: scale(1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      50% { 
+        transform: scale(1.1);
+        box-shadow: 0 10px 15px -3px rgba(34, 197, 94, 0.4), 0 4px 6px -2px rgba(34, 197, 94, 0.2);
+      }
+    }
+    
+    .titilar {
+      animation: titilar 2s ease-in-out infinite;
+    }
+    
+    .titilar:hover {
+      animation-play-state: paused;
+    }
+
+    /* Menú móvil */
+    .mobile-menu {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    /* Overlay para móvil */
+    .mobile-overlay {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    .mobile-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Responsive chatbot */
+    @media (max-width: 640px) {
+      #chatbot {
+        width: calc(100vw - 2rem);
+        left: 1rem;
+        right: 1rem;
+        bottom: 5rem;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-100 text-gray-900">
 
-  <!-- HEADER -->
-  <header class="bg-gray-900 text-white shadow-md">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
-      <!-- LOGO -->
-      <div class="text-3xl sm:text-5xl font-extrabold uppercase tracking-wide bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 text-transparent bg-clip-text drop-shadow-lg select-none">
-        INGETSOPORT
-        <div class="text-xs sm:text-base font-light tracking-wider text-gray-300 mt-1">SOLUCIONES TECNOLÓGICAS</div>
-      </div>
+  <!-- HEADER RESPONSIVO -->
+  <header class="bg-gradient-to-r from-gray-900 to-gray-800 text-white shadow-lg sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        
+        <!-- LOGO -->
+        <div class="flex-shrink-0">
+          <div class="flex items-center">
+            <!-- Icono -->
+            <div class="mr-3 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
+              <svg class="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 18c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2H0v2h24v-2h-4zM4 6h16v10H4V6z"/>
+                <path d="M6 8h12v2H6zm0 3h8v2H6z"/>
+              </svg>
+            </div>
+            <!-- Texto del logo -->
+            <div class="text-xl sm:text-2xl lg:text-3xl font-extrabold uppercase tracking-wide bg-gradient-to-r from-emerald-500 via-teal-500 to-cyan-600 text-transparent bg-clip-text drop-shadow-lg select-none">
+              INGETSOPORT
+              <div class="text-xs sm:text-sm font-light tracking-wider text-gray-300 mt-1">SOLUCIONES TECNOLÓGICAS</div>
+            </div>
+          </div>
+        </div>
 
-      <!-- NAV -->
-      <nav class="mt-4 sm:mt-0 w-full sm:w-auto">
-        <ul class="flex flex-col sm:flex-row gap-3 sm:gap-6 font-semibold text-sm sm:text-base">
-          <li><a href="{{ url_for('index') }}" class="hover:text-blue-400">Inicio</a></li>
-          <li><a href="{{ url_for('nosotros') }}" class="hover:text-blue-400">Nosotros</a></li>
-          <li class="relative group" onmouseenter="mostrarSubmenu()" onmouseleave="ocultarSubmenu()">
-            <a href="{{ url_for('services') }}" class="hover:text-blue-400">Servicios</a>
-            <ul id="submenu-servicios"
-                class="absolute left-0 mt-1 hidden bg-white text-gray-800 shadow-xl rounded w-56 z-50">
-              <li><a href="{{ url_for('software_development') }}" class="block px-4 py-2 hover:bg-blue-100">Desarrollo de Software</a></li>
-              <li><a href="{{ url_for('technical_support') }}" class="block px-4 py-2 hover:bg-blue-100">Soporte Técnico</a></li>
-              <li><a href="{{ url_for('consulting') }}" class="block px-4 py-2 hover:bg-blue-100">Consultoría</a></li>
-              <li><a href="{{ url_for('cybersecurity') }}" class="block px-4 py-2 hover:bg-blue-100">Ciberseguridad</a></li>
-              <li><a href="{{ url_for('network_telecom') }}" class="block px-4 py-2 hover:bg-blue-100">Redes y Telecomunicaciones</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ url_for('ventas') }}" class="hover:text-blue-400">Ventas</a></li>
-          <li><a href="{{ url_for('contact') }}" class="hover:text-blue-400">Contacto</a></li>
-        </ul>
-      </nav>
+        <!-- NAV DESKTOP -->
+        <nav class="hidden lg:flex items-center space-x-8">
+          <a href="{{ url_for('index') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Inicio</a>
+          <a href="{{ url_for('nosotros') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Nosotros</a>
+          
+          <!-- Dropdown Servicios Desktop -->
+          <div class="relative group">
+            <button class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 flex items-center">
+              Servicios
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+              <div class="py-2">
+                <a href="{{ url_for('software_development') }}" class="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors duration-200 text-sm">Desarrollo de Software</a>
+                <a href="{{ url_for('technical_support') }}" class="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors duration-200 text-sm">Soporte Técnico</a>
+                <a href="{{ url_for('consulting') }}" class="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors duration-200 text-sm">Consultoría</a>
+                <a href="{{ url_for('cybersecurity') }}" class="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors duration-200 text-sm">Ciberseguridad</a>
+                <a href="{{ url_for('network_telecom') }}" class="block px-4 py-3 text-gray-800 hover:bg-blue-50 transition-colors duration-200 text-sm">Redes y Telecomunicaciones</a>
+              </div>
+            </div>
+          </div>
+          
+          <a href="{{ url_for('ventas') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Ventas</a>
+          <a href="{{ url_for('contact') }}" class="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200">Contacto</a>
+        </nav>
+
+        <!-- BOTÓN MENÚ MÓVIL -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-gray-300 hover:text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
     </div>
+
+    <!-- MENÚ MÓVIL -->
+    <div id="mobile-menu" class="mobile-menu lg:hidden fixed top-16 left-0 w-64 h-full bg-gray-900 shadow-xl z-40">
+      <div class="px-4 py-6 space-y-4">
+        <a href="{{ url_for('index') }}" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Inicio</a>
+        <a href="{{ url_for('nosotros') }}" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Nosotros</a>
+        
+        <!-- Servicios en móvil -->
+        <div class="space-y-2">
+          <div class="text-gray-400 px-3 py-2 text-sm font-semibold uppercase tracking-wider">Servicios</div>
+          <a href="{{ url_for('software_development') }}" class="block text-gray-300 hover:text-white px-6 py-2 rounded-md text-sm transition-colors duration-200">Desarrollo de Software</a>
+          <a href="{{ url_for('technical_support') }}" class="block text-gray-300 hover:text-white px-6 py-2 rounded-md text-sm transition-colors duration-200">Soporte Técnico</a>
+          <a href="{{ url_for('consulting') }}" class="block text-gray-300 hover:text-white px-6 py-2 rounded-md text-sm transition-colors duration-200">Consultoría</a>
+          <a href="{{ url_for('cybersecurity') }}" class="block text-gray-300 hover:text-white px-6 py-2 rounded-md text-sm transition-colors duration-200">Ciberseguridad</a>
+          <a href="{{ url_for('network_telecom') }}" class="block text-gray-300 hover:text-white px-6 py-2 rounded-md text-sm transition-colors duration-200">Redes y Telecomunicaciones</a>
+        </div>
+        
+        <a href="{{ url_for('ventas') }}" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Ventas</a>
+        <a href="{{ url_for('contact') }}" class="block text-gray-300 hover:text-white px-3 py-2 rounded-md text-base font-medium transition-colors duration-200">Contacto</a>
+      </div>
+    </div>
+
+    <!-- OVERLAY MÓVIL -->
+    <div id="mobile-overlay" class="mobile-overlay lg:hidden fixed inset-0 bg-black bg-opacity-50 z-30"></div>
   </header>
 
-  <!-- CONTENIDO -->
-  <main class="max-w-7xl mx-auto px-4 py-8">
+  <!-- CONTENIDO RESPONSIVO -->
+  <main class="min-h-screen">
     {% block content %}{% endblock %}
   </main>
 
-  <!-- FOOTER -->
-  <footer class="bg-gray-800 text-white py-6 mt-10">
-    <div class="max-w-7xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
-      <div>
-        <p>Email: <a href="mailto:info@ingetsoport.com" class="text-blue-300">info@ingetsoport.com</a></p>
-        <p>Contacto: +593 99 296 1062</p>
+  <!-- FOOTER RESPONSIVO -->
+  <footer class="bg-gradient-to-r from-gray-800 to-gray-900 text-white py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Información de contacto -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-blue-400">Contacto</h3>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <i class="fas fa-envelope w-5 text-blue-400"></i>
+              <a href="mailto:info@ingetsoport.com" class="hover:text-blue-300 transition-colors">info@ingetsoport.com</a>
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-phone w-5 text-blue-400"></i>
+              <a href="tel:+593992961062" class="hover:text-blue-300 transition-colors">+593 99 296 1062</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Enlaces rápidos -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-blue-400">Enlaces Rápidos</h3>
+          <div class="space-y-2 text-sm">
+            <a href="{{ url_for('index') }}" class="block hover:text-blue-300 transition-colors">Inicio</a>
+            <a href="{{ url_for('services') }}" class="block hover:text-blue-300 transition-colors">Servicios</a>
+            <a href="{{ url_for('nosotros') }}" class="block hover:text-blue-300 transition-colors">Nosotros</a>
+            <a href="{{ url_for('contact') }}" class="block hover:text-blue-300 transition-colors">Contacto</a>
+          </div>
+        </div>
+
+        <!-- Estadísticas rápidas -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-blue-400">Estadísticas</h3>
+          <div class="space-y-2 text-sm">
+            <p class="flex items-center">
+              <i class="fas fa-eye w-5 text-blue-400"></i>
+              <span id="total-visits">0</span> visitas totales
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-calendar-day w-5 text-blue-400"></i>
+              <span id="today-visits">0</span> visitas hoy
+            </p>
+            <a href="/admin/stats" class="text-blue-400 hover:text-blue-300 flex items-center">
+              <i class="fas fa-chart-bar w-5"></i>
+              Ver estadísticas completas
+            </a>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold text-blue-400">Síguenos</h3>
+          <div class="flex space-x-4">
+            <a href="#" class="w-10 h-10 bg-blue-600 hover:bg-blue-700 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-pink-600 hover:bg-pink-700 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-instagram"></i>
+            </a>
+            <a href="#" class="w-10 h-10 bg-blue-700 hover:bg-blue-800 rounded-full flex items-center justify-center transition-colors">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="flex space-x-4 mt-4 sm:mt-0">
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook-f"></i></a>
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
-        <a href="#" class="hover:text-blue-400"><i class="fab fa-linkedin-in"></i></a>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-sm text-gray-400">© 2024 INGETSOPORT - INNOVACIÓN Y GESTIÓN DE SOPORTE TECNOLÓGICO</p>
       </div>
     </div>
-    <p class="text-center text-sm mt-4 text-gray-400">© 2024 INGETSOPORT - INNOVACIÓN Y GESTIÓN DE SOPORTE TECNOLÓGICO</p>
   </footer>
 
-  <!-- BOTÓN WHATSAPP -->
+  <!-- BOTÓN WHATSAPP RESPONSIVO -->
   <a href="https://wa.me/593992961062" target="_blank"
-     class="fixed bottom-6 right-6 w-14 h-14 flex items-center justify-center transition hover:scale-110"
+     class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center transition-all duration-300 hover:scale-110 rounded-full shadow-lg z-40"
      aria-label="WhatsApp"
-     style="background: transparent;">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#25D366" class="w-10 h-10">
-      <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.373 0 0 5.373 0 12c0 2.11.553 4.086 1.522 5.86L0 24l6.31-1.57A11.916 11.916 0 0012 24c6.627 0 12-5.373 12-12 0-3.22-1.255-6.237-3.48-8.52zm-8.635 16.272c-1.877 0-3.722-.507-5.34-1.464l-.383-.224-3.741.933.999-3.65-.254-.374a9.528 9.528 0 01-1.49-5.1c0-5.249 4.264-9.51 9.52-9.51 2.54 0 4.925.99 6.72 2.79a9.488 9.488 0 012.789 6.712c0 5.249-4.263 9.51-9.525 9.51zm5.15-7.204c-.285-.142-1.682-.832-1.943-.927-.26-.094-.448-.142-.637.143-.19.285-.73.927-.895 1.117-.165.19-.33.213-.615.071-.285-.142-1.204-.443-2.296-1.42-.85-.757-1.423-1.693-1.59-1.978-.166-.285-.018-.44.125-.582.128-.127.285-.33.428-.495.143-.165.19-.285.285-.475.095-.19.048-.356-.024-.497-.071-.142-.637-1.536-.873-2.11-.23-.553-.464-.48-.637-.49l-.544-.01c-.19 0-.497.07-.757.356-.26.285-.993.972-.993 2.366 0 1.393 1.017 2.74 1.16 2.93.142.19 2.005 3.06 4.85 4.29.678.292 1.205.466 1.618.596.68.215 1.3.184 1.788.112.545-.083 1.682-.686 1.92-1.348.237-.66.237-1.226.166-1.348-.071-.12-.26-.19-.544-.332z"/>
-    </svg>
+     style="background: #25D366;">
+    <img src="{{ url_for('static', filename='img/wha.png') }}" alt="WhatsApp" class="w-6 h-6 sm:w-8 sm:h-8" />
   </a>
 
-  <!-- CHATBOT -->
-  <div id="chatbot" class="fixed bottom-20 left-4 bg-white border rounded shadow-lg w-72">
-    <div class="bg-gray-800 text-white p-2 flex items-center justify-between cursor-pointer" id="chatbot-header">
+  <!-- BOTÓN CHAT VERDE RESPONSIVO -->
+  <div id="chat-button" 
+       class="fixed bottom-4 left-4 sm:bottom-6 sm:left-6 w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center cursor-pointer rounded-lg shadow-lg titilar z-40"
+       style="background-color: #22c55e;"
+       onclick="toggleChatbot()">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" class="w-6 h-6 sm:w-8 sm:h-8">
+      <path d="M20 2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h4l4 4 4-4h4c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"/>
+    </svg>
+  </div>
+
+  <!-- CHATBOT RESPONSIVO -->
+  <div id="chatbot" class="fixed bottom-20 left-4 sm:left-6 bg-white border rounded-lg shadow-xl w-80 sm:w-96 h-96 hidden z-50">
+    <div class="bg-gradient-to-r from-gray-800 to-gray-900 text-white p-3 flex items-center justify-between rounded-t-lg" id="chatbot-header">
       <div class="flex items-center">
-        <img src="https://png.pngtree.com/png-clipart/20231023/original/pngtree-professional-virtual-assistant-3d-illustration-png-image_13398911.png" class="w-6 h-6 mr-2" alt="Bot" />
-        Asistente Virtual
+        <div class="w-8 h-8 rounded-full mr-3" style="background-color: #22c55e;"></div>
+        <div>
+          <div class="font-semibold text-sm">Asistente INGETSoport</div>
+          <div class="text-xs text-gray-300">En línea</div>
+        </div>
       </div>
-      <span id="minimizeButton" class="font-bold select-none cursor-pointer">—</span>
+      <div class="flex items-center space-x-2">
+        <button id="minimizeButton" class="text-white hover:text-gray-300 text-lg">—</button>
+        <button onclick="toggleChatbot()" class="text-white hover:text-gray-300 text-lg">×</button>
+      </div>
     </div>
-    <div id="messages" class="p-2 h-48 overflow-y-auto text-sm"></div>
-    <div class="flex p-2 border-t">
-      <input id="userInput" class="flex-1 border rounded px-2 py-1 text-sm" placeholder="Escribe tu mensaje..." />
-      <button id="sendButton" class="ml-2 text-sm bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600">Enviar</button>
+    <div id="messages" class="p-4 h-64 overflow-y-auto text-sm bg-gray-50"></div>
+    <div class="flex p-3 border-t bg-white rounded-b-lg">
+      <input id="userInput" class="flex-1 border rounded-l-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Escribe tu mensaje..." />
+      <button id="sendButton" class="bg-green-500 text-white px-4 py-2 rounded-r-lg hover:bg-green-600 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
     </div>
   </div>
 
-  <!-- SCRIPT DE CHAT Y SUBMENÚ -->
+  <!-- SCRIPTS RESPONSIVOS -->
   <script>
+    // Menú móvil
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileOverlay = document.getElementById('mobile-overlay');
+
+    function toggleMobileMenu() {
+      mobileMenu.classList.toggle('open');
+      mobileOverlay.classList.toggle('open');
+      document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
+    }
+
+    mobileMenuButton.addEventListener('click', toggleMobileMenu);
+    mobileOverlay.addEventListener('click', toggleMobileMenu);
+
+    // Cerrar menú al hacer clic en enlaces
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        mobileOverlay.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Cargar estadísticas del footer
+    function loadFooterStats() {
+      fetch('/api/stats')
+        .then(response => response.json())
+        .then(data => {
+          document.getElementById('total-visits').textContent = data.total_visits;
+          document.getElementById('today-visits').textContent = data.today_visits;
+        })
+        .catch(error => console.error('Error cargando estadísticas:', error));
+    }
+
+    // Cargar estadísticas al cargar la página
+    loadFooterStats();
+
+    // Actualizar estadísticas cada 5 minutos
+    setInterval(loadFooterStats, 300000);
+
+    // Chatbot
     const chatbot = document.getElementById('chatbot');
+    const chatButton = document.getElementById('chat-button');
     const userInput = document.getElementById('userInput');
     const messages = document.getElementById('messages');
     const sendButton = document.getElementById('sendButton');
     const minimizeButton = document.getElementById('minimizeButton');
     let isMinimized = false;
+    let isChatOpen = false;
+
+    // Base de conocimiento del chatbot
+    const chatbotResponses = {
+      'hola': '¡Hola! Soy el asistente virtual de INGETSoport. ¿En qué puedo ayudarte hoy?',
+      'servicios': 'Ofrecemos los siguientes servicios:\n• Desarrollo de Software\n• Soporte Técnico\n• Consultoría\n• Ciberseguridad\n• Redes y Telecomunicaciones\n\n¿Te gustaría saber más sobre alguno en particular?',
+      'precio': 'Los precios varían según el servicio y las necesidades específicas de tu proyecto. Te recomiendo contactarnos directamente para una cotización personalizada.',
+      'contacto': 'Puedes contactarnos de las siguientes formas:\n📧 Email: info@ingetsoport.com\n📱 WhatsApp: +593 99 296 1062\n🌐 Visita nuestra página de contacto',
+      'software': 'Nuestro servicio de desarrollo de software incluye:\n• Aplicaciones web personalizadas\n• Sistemas de gestión empresarial\n• Aplicaciones móviles\n• Integración de sistemas\n\n¿Tienes algún proyecto específico en mente?',
+      'soporte': 'Nuestro soporte técnico incluye:\n• Mantenimiento preventivo\n• Resolución de problemas\n• Instalación de software\n• Configuración de equipos\n• Soporte remoto y presencial',
+      'ciberseguridad': 'Nuestros servicios de ciberseguridad incluyen:\n• Auditorías de seguridad\n• Implementación de firewalls\n• Protección contra malware\n• Capacitación en seguridad\n• Respuesta a incidentes',
+      'redes': 'Servicios de redes y telecomunicaciones:\n• Diseño e implementación de redes\n• Configuración de equipos\n• Monitoreo de red\n• Optimización de conectividad\n• Soluciones de telecomunicaciones',
+      'consultoria': 'Nuestra consultoría tecnológica incluye:\n• Análisis de infraestructura\n• Optimización de procesos\n• Migración de sistemas\n• Planificación estratégica\n• Auditorías tecnológicas'
+    };
+
+    function getBotResponse(userMessage) {
+      const message = userMessage.toLowerCase();
+      
+      for (let keyword in chatbotResponses) {
+        if (message.includes(keyword)) {
+          return chatbotResponses[keyword];
+        }
+      }
+      
+      const defaultResponses = [
+        'Entiendo tu consulta. Te recomiendo contactar directamente con nuestro equipo para obtener información más específica.',
+        'Gracias por tu interés. ¿Te gustaría que te conecte con uno de nuestros especialistas?',
+        'Para obtener información más detallada, puedes visitar nuestra sección de servicios o contactarnos directamente.',
+        'Excelente pregunta. Nuestro equipo está disponible para ayudarte con eso y mucho más.'
+      ];
+      
+      return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+    }
+
+    function toggleChatbot() {
+      if (isChatOpen) {
+        chatbot.classList.add('hidden');
+        isChatOpen = false;
+      } else {
+        chatbot.classList.remove('hidden');
+        isChatOpen = true;
+        if (messages.children.length === 0) {
+          showWelcomeMessage();
+        }
+      }
+    }
+
+    function showWelcomeMessage() {
+      const welcomeMessage = `¡Hola! Soy el asistente virtual de INGETSoport 🤖
+
+Estoy aquí para ayudarte con información sobre nuestros servicios:
+• Servicios
+• Precios
+• Contacto
+• Desarrollo de Software
+• Soporte Técnico
+• Ciberseguridad
+• Redes
+• Consultoría
+
+¿En qué puedo ayudarte hoy?`;
+      
+      addMessage('Asistente', welcomeMessage, 'bot');
+    }
+
+    function addMessage(sender, text, type) {
+      const messageDiv = document.createElement('div');
+      messageDiv.className = `mb-3 ${type === 'bot' ? 'text-left' : 'text-right'}`;
+      
+      const bubbleDiv = document.createElement('div');
+      bubbleDiv.className = `inline-block max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+        type === 'bot' 
+          ? 'bg-white border border-gray-200 text-gray-800' 
+          : 'bg-green-500 text-white'
+      }`;
+      
+      bubbleDiv.innerHTML = `<div class="font-semibold text-xs mb-1">${sender}</div><div class="whitespace-pre-line">${text}</div>`;
+      
+      messageDiv.appendChild(bubbleDiv);
+      messages.appendChild(messageDiv);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    sendButton.onclick = sendMessage;
+    userInput.onkeypress = function(e) {
+      if (e.key === 'Enter') {
+        sendMessage();
+      }
+    };
+
+    function sendMessage() {
+      const userMessage = userInput.value.trim();
+      if (userMessage) {
+        addMessage('Tú', userMessage, 'user');
+        userInput.value = '';
+        
+        const typingDiv = document.createElement('div');
+        typingDiv.className = 'mb-3 text-left';
+        typingDiv.innerHTML = '<div class="inline-block bg-gray-200 px-4 py-2 rounded-lg text-gray-600">Asistente está escribiendo...</div>';
+        messages.appendChild(typingDiv);
+        messages.scrollTop = messages.scrollHeight;
+        
+        setTimeout(() => {
+          messages.removeChild(typingDiv);
+          const botResponse = getBotResponse(userMessage);
+          addMessage('Asistente', botResponse, 'bot');
+        }, 1000 + Math.random() * 1000);
+      }
+    }
 
     minimizeButton.onclick = () => {
       if (!isMinimized) {
         messages.style.display = 'none';
         userInput.parentElement.style.display = 'none';
-        chatbot.style.height = '40px';
+        chatbot.style.height = '60px';
         minimizeButton.textContent = '+';
         isMinimized = true;
       } else {
         messages.style.display = 'block';
         userInput.parentElement.style.display = 'flex';
-        chatbot.style.height = 'auto';
+        chatbot.style.height = '384px';
         minimizeButton.textContent = '—';
         isMinimized = false;
       }
     };
 
-    sendButton.onclick = () => {
-      const userMessage = userInput.value.trim();
-      if (userMessage) {
-        messages.innerHTML += `<div><strong>Tú:</strong> ${userMessage}</div>`;
-        userInput.value = '';
-        const botResponse = "Lo siento, la función de asistente con IA está temporalmente deshabilitada.";
-        setTimeout(() => {
-          messages.innerHTML += `<div><strong>Asistente:</strong> ${botResponse}</div>`;
-          messages.scrollTop = messages.scrollHeight;
-        }, 500);
+    // Cerrar chatbot al hacer clic fuera en móviles
+    document.addEventListener('click', function(event) {
+      if (window.innerWidth <= 640) {
+        if (!chatbot.contains(event.target) && !chatButton.contains(event.target) && isChatOpen) {
+          toggleChatbot();
+        }
       }
-    };
-
-    window.onload = () => {
-      messages.innerHTML += `<div><strong>Asistente:</strong> ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?</div>`;
-    };
-
-    function mostrarSubmenu() {
-      document.getElementById('submenu-servicios').classList.remove('hidden');
-    }
-
-    function ocultarSubmenu() {
-      document.getElementById('submenu-servicios').classList.add('hidden');
-    }
+    });
   </script>
 
 </body>

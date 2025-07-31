@@ -14,122 +14,372 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+  
+  /* Animaciones personalizadas */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+  
+  /* Efectos de hover mejorados */
+  .service-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  }
+  
+  /* Gradientes modernos */
+  .gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .gradient-text {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="bg-gray-50 min-h-screen px-6 py-16">
-  <div class="max-w-6xl mx-auto space-y-16">
-
-    <!-- Título e Intro -->
-    <section class="text-center">
-      <h1 class="text-4xl md:text-5xl font-extrabold text-blue-800 mb-4">Redes y Telecomunicaciones</h1>
-      <p class="text-gray-700 text-lg max-w-3xl mx-auto">
-        En <strong>INGETsoport</strong> ofrecemos soluciones integrales en redes, adaptadas a las necesidades de tu empresa. Seguridad, eficiencia y conectividad para tu crecimiento.
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+  <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+    
+    <!-- Hero Section Mejorado -->
+    <section class="text-center animate-fade-in-up">
+      <div class="mb-8">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm border border-blue-200 rounded-full px-6 py-3 shadow-lg">
+          <div class="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full animate-pulse"></div>
+          <span class="text-sm font-medium text-gray-700">Soluciones de conectividad avanzadas</span>
+        </div>
+      </div>
+      
+      <h1 class="text-5xl md:text-7xl font-bold gradient-text mb-6 leading-tight">
+        Redes y Telecomunicaciones
+      </h1>
+      
+      <p class="text-xl md:text-2xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        En <strong class="text-blue-600">INGETsoport</strong> ofrecemos soluciones integrales en redes, adaptadas a las necesidades de tu empresa. 
+        <span class="font-semibold text-gray-800">Seguridad, eficiencia y conectividad</span> para tu crecimiento.
       </p>
+      
+      <div class="mt-12 flex justify-center">
+        <div class="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+      </div>
     </section>
 
     <!-- Servicios de Red -->
-    <section>
-      <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Servicios de Redes</h2>
+    <section class="animate-fade-in-up">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Servicios de Redes</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Soluciones tecnológicas de vanguardia para optimizar tu infraestructura de red
+        </p>
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for service in [
-          ["project-diagram", "Diseño de Redes LAN/WAN", "Diseñamos y configuramos redes LAN/WAN para garantizar conectividad eficiente."],
-          ["shield", "Configuración de Firewalls", "Protección avanzada con Fortigate, Cisco y Palo Alto."],
-          ["wifi", "Access Points", "Cobertura Wi-Fi segura y de alto rendimiento."],
-          ["eye", "Monitoreo de Red", "Gestión con herramientas como Zabbix, SolarWinds, ManageEngine."],
-          ["lock", "Seguridad de Redes", "Segmentación y control de acceso para máxima protección."],
-          ["cloud", "Redes en la Nube", "Integración con AWS, Azure y Google Cloud."],
-          ["network", "SD-WAN", "Conectividad optimizada y gestión centralizada."],
-          ["tool", "Consultoría en Infraestructura", "Evaluación y mejoras en tu red actual."],
-          ["shield-check", "Ciberseguridad", "Políticas y soluciones para proteger tus datos."]
-        ] %}
-        <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
-          <div class="flex items-center mb-4 text-blue-700">
-            <i data-lucide="{{ service[0] }}" class="w-6 h-6 mr-2"></i>
-            <h3 class="text-xl font-semibold">{{ service[1] }}</h3>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="project-diagram" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Diseño de Redes LAN/WAN</h3>
           </div>
-          <p class="text-gray-600">{{ service[2] }}</p>
+          <p class="text-gray-600 leading-relaxed">Diseñamos y configuramos redes LAN/WAN para garantizar conectividad eficiente y escalable.</p>
         </div>
-        {% endfor %}
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="shield" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Configuración de Firewalls</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Protección avanzada con Fortigate, Cisco y Palo Alto para máxima seguridad.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="wifi" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Access Points</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Cobertura Wi-Fi segura y de alto rendimiento para tu empresa.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="eye" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Monitoreo de Red</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Gestión con herramientas como Zabbix, SolarWinds, ManageEngine.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="lock" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Seguridad de Redes</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Segmentación y control de acceso para máxima protección.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="cloud" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Redes en la Nube</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Integración con AWS, Azure y Google Cloud para máxima flexibilidad.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="network" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">SD-WAN</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Conectividad optimizada y gestión centralizada de redes.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-teal-500 to-teal-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="tool" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Consultoría en Infraestructura</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Evaluación y mejoras en tu red actual para optimizar el rendimiento.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-pink-500 to-pink-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Ciberseguridad</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Políticas y soluciones avanzadas para proteger tus datos.</p>
+        </div>
+        
       </div>
     </section>
 
     <!-- Soporte Técnico -->
-    <section>
-      <h2 class="text-3xl font-bold text-blue-700 mb-10 text-center">Soporte Técnico y Monitoreo</h2>
+    <section class="animate-fade-in-up">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Soporte Técnico y Monitoreo</h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Servicios de soporte especializado para mantener tu infraestructura funcionando perfectamente
+        </p>
+      </div>
+      
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {% for support in [
-          ["headphones", "Soporte Remoto y On-Site", "Resolución rápida de incidencias en sitio o de forma remota."],
-          ["activity", "Monitoreo en Tiempo Real", "Detección proactiva de problemas con NetFlow Analyzer y ManageEngine."],
-          ["shield-alert", "Consultoría en Seguridad", "Evaluamos tu infraestructura para fortalecer tu seguridad."],
-          ["rotate-ccw", "Backup y Recuperación", "Sistemas automatizados para proteger tu información."],
-          ["server", "Mantenimiento Preventivo", "Actualización de hardware y software para evitar fallos."],
-          ["users", "Capacitación y Formación", "Entrenamos a tu personal en herramientas y gestión de red."]
-        ] %}
-        <div class="bg-white rounded-xl shadow p-6 hover:shadow-lg transition">
-          <div class="flex items-center mb-4 text-blue-700">
-            <i data-lucide="{{ support[0] }}" class="w-6 h-6 mr-2"></i>
-            <h3 class="text-xl font-semibold">{{ support[1] }}</h3>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="headphones" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Soporte Remoto y On-Site</h3>
           </div>
-          <p class="text-gray-600">{{ support[2] }}</p>
+          <p class="text-gray-600 leading-relaxed">Resolución rápida de incidencias en sitio o de forma remota.</p>
         </div>
-        {% endfor %}
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="activity" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Monitoreo en Tiempo Real</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Detección proactiva de problemas con NetFlow Analyzer y ManageEngine.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-red-500 to-red-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="shield-alert" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Consultoría en Seguridad</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Evaluamos tu infraestructura para fortalecer tu seguridad.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="rotate-ccw" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Backup y Recuperación</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Sistemas automatizados para proteger tu información crítica.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-indigo-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="server" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Mantenimiento Preventivo</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Actualización de hardware y software para evitar fallos.</p>
+        </div>
+        
+        <div class="service-card bg-white rounded-2xl shadow-lg p-8 border border-gray-100">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center mr-4">
+              <i data-lucide="users" class="w-6 h-6 text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold text-gray-800">Capacitación y Formación</h3>
+          </div>
+          <p class="text-gray-600 leading-relaxed">Entrenamos a tu personal en herramientas y gestión de red.</p>
+        </div>
+        
       </div>
     </section>
 
     <!-- Tendencias -->
-    <section>
-      <h2 class="text-3xl font-bold text-blue-700 mb-6 text-center">Tendencias y Tecnologías Emergentes</h2>
-      <ul class="list-disc list-inside max-w-4xl mx-auto text-gray-700 space-y-2 text-lg">
-        <li><strong>Redes 5G:</strong> Alta velocidad y baja latencia para comunicaciones móviles.</li>
-        <li><strong>IoT:</strong> Conectividad de dispositivos inteligentes para análisis y control.</li>
-        <li><strong>IA en Redes:</strong> Automatización y detección proactiva de amenazas.</li>
-        <li><strong>Automatización:</strong> Configuración y gestión inteligente de redes.</li>
-      </ul>
+    <section class="animate-fade-in-up">
+      <div class="bg-white rounded-3xl shadow-xl p-12 border border-gray-100">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-8 text-center">Tendencias y Tecnologías Emergentes</h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Redes 5G</h3>
+                <p class="text-gray-600">Alta velocidad y baja latencia para comunicaciones móviles.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">IoT</h3>
+                <p class="text-gray-600">Conectividad de dispositivos inteligentes para análisis y control.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="space-y-4">
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">IA en Redes</h3>
+                <p class="text-gray-600">Automatización y detección proactiva de amenazas.</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="w-8 h-8 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                <div class="w-3 h-3 bg-white rounded-full"></div>
+              </div>
+              <div>
+                <h3 class="text-lg font-bold text-gray-800 mb-2">Automatización</h3>
+                <p class="text-gray-600">Configuración y gestión inteligente de redes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Marcas - Slider -->
-    <section>
-      <h2 class="text-3xl font-bold text-blue-700 mb-8 text-center">Nuestras Marcas</h2>
+    <!-- Marcas - Slider Mejorado -->
+    <section class="animate-fade-in-up">
+      <div class="text-center mb-12">
+        <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Nuestras Marcas</h2>
+        <p class="text-xl text-gray-600">Trabajamos con las mejores marcas del mercado</p>
+      </div>
 
       <div class="relative">
         <!-- Botón Izquierda -->
-        <button onclick="scrollLeft()" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100 hidden md:block" aria-label="Desplazar a la izquierda">
-          <i data-lucide="chevron-left" class="w-6 h-6 text-blue-700"></i>
+        <button onclick="scrollLeft()" class="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg p-3 hover:bg-gray-50 hidden md:block transition-all duration-300" aria-label="Desplazar a la izquierda">
+          <i data-lucide="chevron-left" class="w-6 h-6 text-blue-600"></i>
         </button>
 
         <!-- Slider -->
-        <div id="brandSlider" class="flex flex-nowrap overflow-x-auto gap-6 px-4 scroll-smooth no-scrollbar">
-          {% for brand in [
-            ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI4GMAoCXe-YJKHQ1Iay4Bq0plHJIHnvtg1w&s", "MikroTik", "Soluciones de enrutamiento para PyMEs."],
-            ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZRAzpFxQoZYyrNnNM2TKFwDGmXT5dldgZQ&s", "Cisco", "Routing, switching y seguridad empresarial."],
-            ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjX3G9jEw3mZl597DgvNLqt01oCMz3ujOXw&s", "Fortinet", "Firewalls y seguridad integral de red."],
-            ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShg5Y0U73IHeSyPeyktJdUZvkCQxMHE15_nA&s", "Ubiquiti", "Conectividad eficiente y escalable."]
-          ] %}
-          <div class="flex-none w-60 bg-white rounded-xl shadow p-4 text-center space-y-2">
-            <img src="{{ brand[0] }}" alt="{{ brand[1] }}" class="h-16 mx-auto object-contain">
-            <p class="text-sm text-gray-600"><strong>{{ brand[1] }}:</strong> {{ brand[2] }}</p>
+        <div id="brandSlider" class="flex flex-nowrap overflow-x-auto gap-8 px-4 scroll-smooth no-scrollbar">
+          
+          <div class="flex-none w-72 bg-white rounded-2xl shadow-lg p-8 text-center space-y-4 hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mx-auto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSI4GMAoCXe-YJKHQ1Iay4Bq0plHJIHnvtg1w&amp;s" alt="MikroTik" class="h-12 w-auto object-contain">
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">MikroTik</h3>
+            <p class="text-gray-600">Soluciones de enrutamiento para PyMEs.</p>
           </div>
-          {% endfor %}
+          
+          <div class="flex-none w-72 bg-white rounded-2xl shadow-lg p-8 text-center space-y-4 hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mx-auto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ZRAzpFxQoZYyrNnNM2TKFwDGmXT5dldgZQ&amp;s" alt="Cisco" class="h-12 w-auto object-contain">
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Cisco</h3>
+            <p class="text-gray-600">Routing, switching y seguridad empresarial.</p>
+          </div>
+          
+          <div class="flex-none w-72 bg-white rounded-2xl shadow-lg p-8 text-center space-y-4 hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mx-auto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfjX3G9jEw3mZl597DgvNLqt01oCMz3ujOXw&amp;s" alt="Fortinet" class="h-12 w-auto object-contain">
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Fortinet</h3>
+            <p class="text-gray-600">Firewalls y seguridad integral de red.</p>
+          </div>
+          
+          <div class="flex-none w-72 bg-white rounded-2xl shadow-lg p-8 text-center space-y-4 hover:shadow-xl transition-all duration-300">
+            <div class="w-20 h-20 bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl flex items-center justify-center mx-auto">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShg5Y0U73IHeSyPeyktJdUZvkCQxMHE15_nA&amp;s" alt="Ubiquiti" class="h-12 w-auto object-contain">
+            </div>
+            <h3 class="text-lg font-bold text-gray-800">Ubiquiti</h3>
+            <p class="text-gray-600">Conectividad eficiente y escalable.</p>
+          </div>
+          
         </div>
 
         <!-- Botón Derecha -->
-        <button onclick="scrollRight()" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow p-2 hover:bg-blue-100 hidden md:block" aria-label="Desplazar a la derecha">
-          <i data-lucide="chevron-right" class="w-6 h-6 text-blue-700"></i>
+        <button onclick="scrollRight()" class="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full shadow-lg p-3 hover:bg-gray-50 hidden md:block transition-all duration-300" aria-label="Desplazar a la derecha">
+          <i data-lucide="chevron-right" class="w-6 h-6 text-blue-600"></i>
         </button>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="text-center pt-16">
-      <h2 class="text-3xl font-extrabold text-blue-700 mb-4">¿Listo para conectar tu negocio al futuro?</h2>
-      <p class="text-gray-700 mb-6 max-w-xl mx-auto text-lg">
-        Contáctanos y descubre cómo optimizar tu red con las mejores tecnologías y soporte especializado.
-      </p>
-      <a href="/contact" class="inline-block bg-blue-700 text-white font-bold py-3 px-8 rounded-full hover:bg-blue-800 transition">
-        Contáctanos
-      </a>
+    <!-- CTA Mejorado -->
+    <section class="text-center animate-fade-in-up">
+      <div class="bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl shadow-2xl p-12 text-white">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">¿Listo para conectar tu negocio al futuro?</h2>
+        <p class="text-xl mb-8 max-w-2xl mx-auto text-blue-100">
+          Contáctanos y descubre cómo optimizar tu red con las mejores tecnologías y soporte especializado.
+        </p>
+        <a href="/contact" class="inline-block bg-white text-blue-600 font-bold py-4 px-8 rounded-full hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
+          Contáctanos
+        </a>
+      </div>
     </section>
   </div>
 </div>
